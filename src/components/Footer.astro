@@ -1,0 +1,119 @@
+---
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const isEn = locale === 'en';
+
+const serviceLinks = isEn
+  ? [
+      { label: 'Growth Strategy', href: '/en/services/strategic-growth/' },
+      { label: 'Supplier Development', href: '/en/services/supplier-development/' },
+      { label: 'Compliance & Security', href: '/en/services/compliance-security/' },
+      { label: 'IT & Cloud Solutions', href: '/en/services/it-cloud-solutions/' },
+      { label: 'Financial Advisory', href: '/en/services/financial-advisory/' },
+    ]
+  : [
+      { label: 'Stratejik Büyüme', href: '/tr/hizmetler/stratejik-buyume/' },
+      { label: 'Tedarikçi Geliştirme', href: '/tr/hizmetler/tedarikci-gelistirme/' },
+      { label: 'Uyumluluk & Güvenlik', href: '/tr/hizmetler/uyumluluk-bilgi-guvenligi/' },
+      { label: 'IT & Bulut Çözümleri', href: '/tr/hizmetler/it-bulut-cozumleri/' },
+      { label: 'Finansal Danışmanlık', href: '/tr/hizmetler/finansal-danismanlik/' },
+    ];
+
+const companyLinks = isEn
+  ? [
+      { label: 'About', href: '/en/about/' },
+      { label: 'How We Work', href: '/en/how-we-work/' },
+      { label: 'Partners', href: '/en/partners/' },
+      { label: 'Contact Us', href: '/en/contact/' },
+    ]
+  : [
+      { label: 'Hakkımızda', href: '/tr/hakkimizda/' },
+      { label: 'Nasıl Çalışıyoruz', href: '/tr/nasil-calisiyoruz/' },
+      { label: 'Partnerler', href: '/tr/partnerler/' },
+      { label: 'İletişim', href: '/tr/iletisim/' },
+    ];
+
+const newsletterTitle = isEn ? 'Newsletter' : 'Bülten';
+const newsletterText = isEn ? 'Professional insights delivered quarterly.' : 'Profesyonel içgörüler, üç ayda bir.';
+const emailPlaceholder = isEn ? 'Corporate Email' : 'Kurumsal E-posta';
+const servicesTitle = isEn ? 'Services' : 'Hizmetler';
+const companyTitle = isEn ? 'Company' : 'Şirket';
+const tagline = isEn
+  ? 'The integrated platform for industrial growth, compliance, and strategic enablement.'
+  : 'Endüstriyel büyüme, uyumluluk ve stratejik etkinleştirme için entegre platform.';
+const copyright = isEn
+  ? '© 2025 Curator B2B Consultancy. All rights reserved.'
+  : '© 2025 Curator B2B Danışmanlık. Tüm hakları saklıdır.';
+---
+
+<footer class="bg-surface-container-low">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-6 md:px-12 py-20 max-w-7xl mx-auto">
+    <!-- Brand Column -->
+    <div class="space-y-6">
+      <div class="text-lg font-extrabold tracking-widest uppercase text-primary-container font-headline">CURATOR</div>
+      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+        {tagline}
+      </p>
+    </div>
+
+    <!-- Services Column -->
+    <div class="space-y-4">
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{servicesTitle}</h5>
+      <ul class="space-y-3">
+        {serviceLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-on-surface-variant text-sm hover:text-primary-container transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Company Column -->
+    <div class="space-y-4">
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{companyTitle}</h5>
+      <ul class="space-y-3">
+        {companyLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-on-surface-variant text-sm hover:text-primary-container transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Newsletter Column -->
+    <div class="space-y-4">
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{newsletterTitle}</h5>
+      <p class="text-on-surface-variant text-sm">{newsletterText}</p>
+      <div class="flex ghost-border rounded-lg overflow-hidden">
+        <input
+          type="email"
+          placeholder={emailPlaceholder}
+          class="bg-transparent text-sm w-full px-4 py-2.5 border-none focus:outline-none focus:ring-0 text-on-surface"
+        />
+        <button class="bg-primary-container text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest shrink-0 hover:opacity-90 transition-opacity">
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 border-t border-outline-variant/10">
+    <p class="text-on-surface-variant text-xs text-center leading-relaxed">
+      {copyright}
+    </p>
+  </div>
+</footer>

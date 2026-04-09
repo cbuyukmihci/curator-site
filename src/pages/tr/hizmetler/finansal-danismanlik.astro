@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Finansal & Stratejik Danışmanlık | CURATOR" description="Değerleme, stratejik planlama, büyüme hazırlığı ve kurumsal konumlandırma desteği." locale="tr">
+  <ServiceDetailLayout
+    locale="tr"
+    icon="account_balance"
+    title="Daha Akıllı Stratejik ve Finansal Kararlar Alın"
+    subtitle="Finansal Danışmanlık"
+    description="Değerleme, stratejik planlama, büyüme hazırlığı ve uzun vadeli kurumsal konumlandırma konularında daha net bir yöne ihtiyaç duyan şirketlere destek veriyoruz."
+    features={[
+      { title: 'Şirket Değerleme', description: 'Kapsamlı şirket değerleme analizi ve raporlaması.' },
+      { title: 'Stratejik Planlama', description: 'Uzun vadeli stratejik plan geliştirme desteği.' },
+      { title: 'Büyüme Senaryosu', description: 'Farklı büyüme senaryolarının modellenmesi ve analizi.' },
+      { title: 'Yatırıma Hazırlık', description: 'Yatırımcı sunumu ve yatırım sürecine hazırlık.' },
+      { title: 'Halka Arz Hazırlığı', description: 'Giriş seviyesinde halka arz hazırlık ve değerlendirme desteği.' },
+    ]}
+    outcomes={[
+      'İş değerinin daha yapılandırılmış görünümü',
+      'Gelecek seçenekleri hakkında netlik',
+      'Sermaye piyasası hazırlığı',
+      'Daha bilinçli stratejik kararlar',
+    ]}
+    ctaLabel="Bir Sonraki Aşamanızı Konuşalım"
+    ctaHref="/tr/iletisim/"
+  />
+</BaseLayout>

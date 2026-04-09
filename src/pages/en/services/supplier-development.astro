@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Supplier Development & Audit | CURATOR" description="We help suppliers understand where they stand, close critical gaps, and prepare for stricter customer expectations." locale="en">
+  <ServiceDetailLayout
+    locale="en"
+    icon="inventory"
+    title="Turn Supplier Potential into Real Customer Readiness"
+    subtitle="Supplier Development"
+    description="We help suppliers understand where they stand, close critical gaps, and prepare for stricter customer expectations and audit processes."
+    features={[
+      { title: 'Supplier Assessment', description: 'Comprehensive analysis of current capability and readiness level.' },
+      { title: 'Operational Review', description: 'Process and operations review to identify improvement areas.' },
+      { title: 'Audit Readiness', description: 'Comprehensive preparation support before customer audits.' },
+      { title: 'Gap Analysis', description: 'Identification and prioritization of critical gaps.' },
+      { title: 'Improvement Roadmap', description: 'Phased development plan and implementation timeline.' },
+    ]}
+    outcomes={['Better readiness', 'Lower audit risk', 'Stronger credibility with larger customers']}
+    ctaLabel="Request a Readiness Review"
+    ctaHref="/en/contact/"
+  />
+</BaseLayout>

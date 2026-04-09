@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Strategic Growth & Market Development | CURATOR" description="We support companies that want to enter new sectors, reach new customer groups, or build a more focused growth strategy." locale="en">
+  <ServiceDetailLayout
+    locale="en"
+    icon="public"
+    title="Build a Stronger Route to Market"
+    subtitle="Strategic Growth"
+    description="We support companies that want to enter new sectors, reach new customer groups, or build a more focused growth strategy."
+    features={[
+      { title: 'Market Research', description: 'Deep analysis of target markets and opportunity mapping.' },
+      { title: 'Market Entry Strategy', description: 'Phased expansion plans for new geographies and sectors.' },
+      { title: 'Go-to-Market Planning', description: 'Product-market fit and channel strategy development.' },
+      { title: 'Competitor Analysis', description: 'Competitor and positioning analysis with differentiation strategy.' },
+      { title: 'Partnership Strategy', description: 'Channel and business partnership strategy development.' },
+    ]}
+    outcomes={['Clearer priorities', 'Stronger market focus', 'More realistic execution plans', 'Higher quality growth decisions']}
+    ctaLabel="Discuss Your Growth Plan"
+    ctaHref="/en/contact/"
+  />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="IT, Network & Cloud Solutions | CURATOR" description="We support companies that need stronger network infrastructure, cloud capability, and technology modernization." locale="en">
+  <ServiceDetailLayout
+    locale="en"
+    icon="cloud"
+    title="Strengthen Your Technology Backbone for Scale and Resilience"
+    subtitle="IT & Cloud Solutions"
+    description="We support companies that need stronger network infrastructure, cloud capability, and technology modernization as part of their operational growth journey."
+    features={[
+      { title: 'Network Infrastructure', description: 'Assessment and strengthening of existing infrastructure.' },
+      { title: 'Cloud Transition Planning', description: 'Cloud strategy and transition plan aligned to business needs.' },
+      { title: 'System Modernization', description: 'Legacy system modernization and integration.' },
+      { title: 'IT Needs Analysis', description: 'Operational IT needs analysis and prioritization.' },
+    ]}
+    outcomes={['More reliable operations', 'Better scalability', 'Improved readiness for structured growth and compliance']}
+    ctaLabel="Discuss Your IT Needs"
+    ctaHref="/en/contact/"
+  />
+</BaseLayout>

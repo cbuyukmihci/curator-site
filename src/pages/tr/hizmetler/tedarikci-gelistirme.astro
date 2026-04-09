@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Tedarikçi Geliştirme & Denetim | CURATOR" description="Tedarikçilerin nerede durduğunu anlamasına, kritik açıkları kapatmasına ve müşteri beklentilerine hazırlanmasına yardımcı oluyoruz." locale="tr">
+  <ServiceDetailLayout
+    locale="tr"
+    icon="inventory"
+    title="Tedarikçi Potansiyelini Müşteri Hazırlığına Dönüştürün"
+    subtitle="Tedarikçi Geliştirme"
+    description="Tedarikçilerin nerede durduğunu anlamasına, kritik açıkları kapatmasına ve daha sıkı müşteri beklentileri ve denetim süreçlerine hazırlanmasına yardımcı oluyoruz."
+    features={[
+      { title: 'Tedarikçi Değerlendirme', description: 'Mevcut yetkinlik ve hazırlık seviyesinin kapsamlı analizi.' },
+      { title: 'Operasyonel İnceleme', description: 'Süreç ve operasyon incelemesi ile iyileştirme alanlarının belirlenmesi.' },
+      { title: 'Denetim Hazırlığı', description: 'Müşteri denetimleri öncesi kapsamlı hazırlık desteği.' },
+      { title: 'Açık Analizi', description: 'Kritik eksikliklerin belirlenmesi ve önceliklendirilmesi.' },
+      { title: 'İyileştirme Yol Haritası', description: 'Aşamalı gelişim planı ve uygulama takvimi.' },
+    ]}
+    outcomes={[
+      'Daha iyi hazırlık seviyesi',
+      'Düşük denetim riski',
+      'Büyük müşteriler nezdinde daha güçlü güvenilirlik',
+    ]}
+    ctaLabel="Hazırlık Değerlendirmesi Talep Edin"
+    ctaHref="/tr/iletisim/"
+  />
+</BaseLayout>

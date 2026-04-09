@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    icon: 'public',
+    title: 'Stratejik Büyüme & Pazar Geliştirme',
+    description: 'Yeni sektörlere girmek, yeni müşteri gruplarına ulaşmak veya daha odaklı bir büyüme stratejisi oluşturmak isteyen şirketlere destek.',
+    href: '/tr/hizmetler/stratejik-buyume/',
+    span: 'md:col-span-3',
+  },
+  {
+    icon: 'inventory',
+    title: 'Tedarikçi Geliştirme & Denetim',
+    description: 'Tedarikçilerin nerede durduğunu anlamasına, kritik açıkları kapatmasına ve daha sıkı müşteri beklentilerine hazırlanmasına destek.',
+    href: '/tr/hizmetler/tedarikci-gelistirme/',
+    span: 'md:col-span-3',
+  },
+  {
+    icon: 'security',
+    title: 'Uyumluluk & Bilgi Güvenliği',
+    description: 'KVKK desteği, ISO 27001 hazırlığı ve uygulama desteği, dokümantasyon yapısı, iç denetim hazırlığı.',
+    href: '/tr/hizmetler/uyumluluk-bilgi-guvenligi/',
+    span: 'md:col-span-2',
+  },
+  {
+    icon: 'cloud',
+    title: 'IT, Ağ & Bulut Çözümleri',
+    description: 'Ağ altyapısı, bulut geçişi, sistem modernizasyonu ve operasyonel IT ihtiyaç analizi.',
+    href: '/tr/hizmetler/it-bulut-cozumleri/',
+    span: 'md:col-span-2',
+  },
+  {
+    icon: 'account_balance',
+    title: 'Finansal & Stratejik Danışmanlık',
+    description: 'Şirket değerleme, stratejik planlama, büyüme senaryosu planlaması ve yatırıma hazırlık.',
+    href: '/tr/hizmetler/finansal-danismanlik/',
+    span: 'md:col-span-2',
+  },
+];
+---
+
+<BaseLayout
+  title="Hizmetler | CURATOR B2B Danışmanlık"
+  description="Stratejik büyüme, tedarikçi geliştirme, uyumluluk, IT/bulut ve finansal danışmanlık hizmetlerimiz."
+  locale="tr"
+>
+  <main class="pt-20">
+    <!-- Hero -->
+    <section class="px-6 md:px-8 py-24 md:py-32 bg-surface">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 items-end">
+        <div class="md:col-span-8">
+          <span class="text-xs tracking-widest uppercase text-on-primary-container font-bold mb-4 block">Hizmet Portföyü</span>
+          <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-primary-container">
+            Sürdürülebilir Büyüme İçin <span class="text-on-tertiary-container">Entegre Çözümler.</span>
+          </h1>
+        </div>
+        <div class="md:col-span-4 pb-4">
+          <p class="text-on-surface-variant leading-relaxed text-lg">
+            Pazar stratejisinden denetim hazırlığına, IT yetkinliğinden stratejik finansa kadar şirketlerin bir sonraki büyüme aşaması için ihtiyaç duyduğu yetenekleri inşa ediyoruz.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 px-6 md:px-8 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-lg text-secondary leading-relaxed max-w-4xl">
+          Hizmetlerimiz birlikte çalışacak şekilde tasarlanmıştır. Bir şirket tek bir ihtiyaçla girebilir,
+          ancak uzun vadeli değer genellikle büyüme, sistemler, hazırlık ve stratejik yön boyunca
+          birbirine bağlı sorunların çözülmesinden gelir.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Bento Grid -->
+    <section class="py-24 px-6 md:px-8 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+          {services.map((service) => (
+            <a href={service.href} class={`${service.span} bg-surface-container-lowest p-10 rounded-xl ghost-border hover:ambient-shadow transition-all group`}>
+              <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">{service.icon}</span>
+              <h4 class="text-xl font-bold mb-4 font-headline text-primary-container group-hover:text-on-tertiary-container transition-colors">{service.title}</h4>
+              <p class="text-secondary text-sm leading-relaxed mb-6">{service.description}</p>
+              <span class="text-primary-container font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Detaylı Bilgi
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 md:px-8 bg-surface-container-low">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-primary-container mb-6 font-headline">Doğru Başlangıç Noktasını Belirlemenize Yardımcı Olalım</h2>
+        <p class="text-secondary mb-10">Önceliklerinizi ilk toplantıda birlikte haritalandırabiliriz.</p>
+        <a
+          href="/tr/iletisim/"
+          class="inline-block signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all"
+        >
+          Toplantı Planla
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

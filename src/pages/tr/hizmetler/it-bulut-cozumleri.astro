@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="IT, Ağ & Bulut Çözümleri | CURATOR" description="Ölçek ve dayanıklılık için ağ altyapısı, bulut geçişi ve sistem modernizasyonu desteği." locale="tr">
+  <ServiceDetailLayout
+    locale="tr"
+    icon="cloud"
+    title="Ölçek ve Dayanıklılık İçin Teknoloji Altyapınızı Güçlendirin"
+    subtitle="IT & Bulut Çözümleri"
+    description="Operasyonel büyüme yolculuğunun parçası olarak daha güçlü ağ altyapısı, bulut yetkinliği ve teknoloji modernizasyonuna ihtiyaç duyan şirketlere destek veriyoruz."
+    features={[
+      { title: 'Ağ Altyapı Desteği', description: 'Mevcut altyapının değerlendirilmesi ve güçlendirilmesi.' },
+      { title: 'Bulut Geçiş Planlaması', description: 'İş ihtiyaçlarına uygun bulut stratejisi ve geçiş planı.' },
+      { title: 'Sistem Modernizasyonu', description: 'Eski sistemlerin modernizasyonu ve entegrasyonu.' },
+      { title: 'IT İhtiyaç Analizi', description: 'Operasyonel IT ihtiyaçlarının analizi ve önceliklendirmesi.' },
+    ]}
+    outcomes={[
+      'Daha güvenilir operasyonlar',
+      'Daha iyi ölçeklenebilirlik',
+      'Yapılandırılmış büyüme ve uyumluluk için gelişmiş hazırlık',
+    ]}
+    ctaLabel="IT İhtiyaçlarınızı Konuşalım"
+    ctaHref="/tr/iletisim/"
+  />
+</BaseLayout>

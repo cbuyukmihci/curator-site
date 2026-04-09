@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const sectors = [
+  { icon: 'shield', title: 'Defense', description: 'Supplier readiness, audit preparation, structured growth support, and stronger positioning for demanding ecosystems.' },
+  { icon: 'directions_car', title: 'Automotive', description: 'Operational discipline, supplier development, systems readiness, and market expansion support.' },
+  { icon: 'precision_manufacturing', title: 'Industrial Manufacturing', description: 'Commercial growth planning, process maturity, governance, and technology enablement.' },
+  { icon: 'memory', title: 'Technology & Digital Services', description: 'Compliance, cloud readiness, information security structure, and strategic scaling support.' },
+];
+---
+
+<BaseLayout title="Sectors | CURATOR" description="Built for industries where readiness matters." locale="en">
+  <main class="pt-20">
+    <section class="px-6 md:px-8 py-24 md:py-32 bg-surface">
+      <div class="max-w-4xl">
+        <span class="text-xs font-bold tracking-[0.2em] text-on-primary-container uppercase block mb-4">Sectors</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">Built for Industries Where Readiness Matters.</h1>
+        <p class="text-lg text-secondary leading-relaxed">Our work is especially relevant in sectors where growth, compliance, supplier capability, and trust are tightly connected.</p>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-8 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sectors.map((sector) => (
+          <div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:ambient-shadow transition-all">
+            <div class="w-14 h-14 flex items-center justify-center bg-primary-container rounded-lg mb-6">
+              <span class="material-symbols-outlined text-white text-2xl">{sector.icon}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-primary-container mb-4 font-headline">{sector.title}</h3>
+            <p class="text-secondary leading-relaxed">{sector.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-8 bg-surface">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-primary-container mb-6 font-headline">See How We Can Support Your Sector</h2>
+        <a href="/en/contact/" class="inline-block signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all">Book a Meeting</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

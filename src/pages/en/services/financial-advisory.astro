@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Financial & Strategic Advisory | CURATOR" description="We support companies that need clearer direction in valuation, strategic planning, and investment readiness." locale="en">
+  <ServiceDetailLayout
+    locale="en"
+    icon="account_balance"
+    title="Make Smarter Strategic and Financial Decisions"
+    subtitle="Financial Advisory"
+    description="We support companies that need clearer direction in valuation, strategic planning, growth preparation, and long-term corporate positioning."
+    features={[
+      { title: 'Company Valuation', description: 'Comprehensive company valuation analysis and reporting.' },
+      { title: 'Strategic Planning', description: 'Long-term strategic plan development support.' },
+      { title: 'Growth Scenario Planning', description: 'Modeling and analysis of different growth scenarios.' },
+      { title: 'Investment Readiness', description: 'Investor presentation and investment process preparation.' },
+      { title: 'IPO Readiness', description: 'Introductory-level IPO preparation and assessment support.' },
+    ]}
+    outcomes={['A more structured view of business value', 'Clarity on future options', 'Capital market preparedness', 'Better-informed strategic decisions']}
+    ctaLabel="Talk About Your Next Stage"
+    ctaHref="/en/contact/"
+  />
+</BaseLayout>

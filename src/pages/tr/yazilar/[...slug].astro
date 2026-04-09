@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('insights');
+  const trPosts = allPosts.filter((post) => post.data.locale === 'tr');
+  return trPosts.map((post) => ({
+    params: { slug: post.id.replace('tr/', '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | CURATOR`} description={post.data.description} locale="tr">
+  <main class="pt-20">
+    <article class="px-6 md:px-8 py-24 bg-surface">
+      <div class="max-w-3xl mx-auto">
+        <!-- Meta -->
+        <div class="mb-8">
+          <a href="/tr/yazilar/" class="text-xs font-bold uppercase tracking-widest text-on-primary-container hover:text-primary-container transition-colors flex items-center gap-1 mb-6">
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+            Tüm Yazılar
+          </a>
+          <div class="flex gap-2 mb-4">
+            {post.data.tags.map((tag) => (
+              <span class="text-[10px] font-bold uppercase tracking-widest text-on-primary-container bg-surface-container-low px-2 py-1 rounded">{tag}</span>
+            ))}
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-primary-container mb-6 leading-[1.15] font-headline">
+            {post.data.title}
+          </h1>
+          <div class="flex items-center gap-4 text-sm text-on-surface-variant">
+            <span>{post.data.author}</span>
+            <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+            <span>{post.data.date.toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="prose prose-lg max-w-none
+          prose-headings:font-headline prose-headings:text-primary-container prose-headings:tracking-tight
+          prose-p:text-on-surface-variant prose-p:leading-relaxed
+          prose-a:text-on-tertiary-container prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-primary-container
+          prose-li:text-on-surface-variant
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        ">
+          <Content />
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 p-8 bg-surface-container-low rounded-xl text-center">
+          <p class="text-primary-container font-bold mb-4 font-headline">Bu konuda destek almak ister misiniz?</p>
+          <a href="/tr/iletisim/" class="inline-block signature-gradient text-white px-8 py-3 rounded-lg font-semibold text-sm hover:opacity-95 transition-all">
+            Toplantı Planla
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/*
+ * CURATOR Design System Tokens
+ * Source: DESIGN.md + Stitch HTML Tailwind config
+ */
+
+@theme {
+  /* ── Colors: Full Material Design 3 Semantic Palette ── */
+  --color-primary: #000616;
+  --color-primary-container: #0b1f3b;
+  --color-primary-fixed: #d6e3ff;
+  --color-primary-fixed-dim: #b5c7eb;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #7587a9;
+  --color-on-primary-fixed: #071b37;
+  --color-on-primary-fixed-variant: #364765;
+  --color-inverse-primary: #b5c7eb;
+
+  --color-secondary: #486081;
+  --color-secondary-container: #bdd6fd;
+  --color-secondary-fixed: #d3e3ff;
+  --color-secondary-fixed-dim: #afc8ee;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #455d7e;
+  --color-on-secondary-fixed: #001c39;
+  --color-on-secondary-fixed-variant: #304868;
+
+  --color-tertiary: #000717;
+  --color-tertiary-container: #001f43;
+  --color-tertiary-fixed: #d6e3ff;
+  --color-tertiary-fixed-dim: #a9c7ff;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #5387d6;
+  --color-on-tertiary-fixed: #001b3d;
+  --color-on-tertiary-fixed-variant: #00468b;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-surface: #f8f9fb;
+  --color-surface-bright: #f8f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-tint: #4d5f7e;
+  --color-surface-variant: #e0e3e5;
+  --color-surface-container: #eceef0;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #44474d;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+
+  --color-outline: #75777e;
+  --color-outline-variant: #c5c6ce;
+
+  --color-background: #f8f9fb;
+  --color-on-background: #191c1e;
+
+  /* ── Typography ── */
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.125rem;
+  --radius-DEFAULT: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 1rem;
+}
+
+/* ── Base Styles ── */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-headline);
+}
+
+/* ── DESIGN.md Custom Utilities ── */
+
+/* Signature Gradient: 135deg metallic luster from primary to primary-container */
+.signature-gradient {
+  background: linear-gradient(135deg, #000616 0%, #0b1f3b 100%);
+}
+
+/* Ghost Border: outline-variant at 15% opacity - "suggestion" of a container */
+.ghost-border {
+  border: 1px solid rgba(197, 198, 206, 0.15);
+}
+
+/* Ambient Shadow: blue-tinted, extra-diffused - felt not seen */
+.ambient-shadow {
+  box-shadow: 0 20px 40px rgba(7, 27, 55, 0.06);
+}
+
+/* Glassmorphism: for floating elements (nav, modals) */
+.glass {
+  background: rgba(248, 249, 251, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Material Symbols base config */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Uyumluluk & Bilgi Güvenliği | CURATOR" description="KVKK ve ISO 27001 hazırlığı ile uyumluluk yapısını güçlendirme desteği." locale="tr">
+  <ServiceDetailLayout
+    locale="tr"
+    icon="security"
+    title="Güçlü Uyumluluk ve Bilgi Güvenliği ile Güven İnşa Edin"
+    subtitle="Uyumluluk & Güvenlik"
+    description="Şirketlerin uyumluluk yapısını güçlendirmesine ve bilgi güvenliği ile veri koruması ile ilgili resmi gereksinimlere hazırlanmasına destek veriyoruz."
+    features={[
+      { title: 'KVKK Desteği', description: 'Kişisel verilerin korunması kanununa uyum süreç yönetimi.' },
+      { title: 'ISO 27001 Hazırlığı', description: 'Bilgi güvenliği yönetim sistemi kurulumu ve belgelendirme hazırlığı.' },
+      { title: 'Dokümantasyon Yapısı', description: 'Politika, prosedür ve kayıt sistemlerinin oluşturulması.' },
+      { title: 'İç Denetim Hazırlığı', description: 'Denetim ve değerlendirmeler için iç hazırlık desteği.' },
+      { title: 'Yönetişim Uyumu', description: 'Süreç ve yönetişim yapılarının uyumlandırılması.' },
+    ]}
+    outcomes={[
+      'Daha güçlü yönetişim ve veri disiplini',
+      'Müşteri güveninin artması',
+      'Uzun vadeli ölçeklenebilirlik desteği',
+      'Denetim hazırlığında güven',
+    ]}
+    ctaLabel="Uyumluluk Yol Haritanıza Başlayın"
+    ctaHref="/tr/iletisim/"
+  />
+</BaseLayout>

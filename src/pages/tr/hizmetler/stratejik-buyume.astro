@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Stratejik Büyüme & Pazar Geliştirme | CURATOR" description="Yeni sektörlere girmek, yeni müşteri gruplarına ulaşmak veya daha odaklı bir büyüme stratejisi oluşturmak isteyen şirketlere destek." locale="tr">
+  <ServiceDetailLayout
+    locale="tr"
+    icon="public"
+    title="Pazara Daha Güçlü Bir Yol İnşa Edin"
+    subtitle="Stratejik Büyüme"
+    description="Yeni sektörlere girmek, yeni müşteri gruplarına ulaşmak veya daha odaklı bir büyüme stratejisi oluşturmak isteyen şirketlere destek veriyoruz."
+    features={[
+      { title: 'Pazar Araştırması', description: 'Hedef pazarların derinlemesine analizi ve fırsat haritalandırması.' },
+      { title: 'Pazara Giriş Stratejisi', description: 'Yeni coğrafya ve sektörlere aşamalı genişleme planları.' },
+      { title: 'Pazara Çıkış Planlaması', description: 'Ürün-pazar uyumu ve kanal stratejisi geliştirme.' },
+      { title: 'Rekabet Analizi', description: 'Rakip ve konumlandırma analizi ile farklılaşma stratejisi.' },
+      { title: 'Ortaklık Stratejisi', description: 'Kanal ve iş ortaklığı stratejisi geliştirme.' },
+    ]}
+    outcomes={[
+      'Daha net öncelikler',
+      'Daha güçlü pazar odağı',
+      'Daha gerçekçi uygulama planları',
+      'Daha kaliteli büyüme kararları',
+    ]}
+    ctaLabel="Büyüme Planınızı Konuşalım"
+    ctaHref="/tr/iletisim/"
+  />
+</BaseLayout>

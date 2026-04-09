@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceDetailLayout from '../../../components/ServiceDetailLayout.astro';
+---
+
+<BaseLayout title="Compliance & Information Security | CURATOR" description="We support companies in strengthening their compliance structure and preparing for information security requirements." locale="en">
+  <ServiceDetailLayout
+    locale="en"
+    icon="security"
+    title="Build Trust Through Stronger Compliance and Information Security"
+    subtitle="Compliance & Security"
+    description="We support companies in strengthening their compliance structure and preparing for formal requirements related to information security and data protection."
+    features={[
+      { title: 'KVKK Support', description: 'Personal data protection law compliance process management.' },
+      { title: 'ISO 27001 Readiness', description: 'Information security management system setup and certification preparation.' },
+      { title: 'Documentation Structure', description: 'Creation of policy, procedure, and record systems.' },
+      { title: 'Internal Audit Preparation', description: 'Internal preparation support for audits and reviews.' },
+      { title: 'Governance Alignment', description: 'Process and governance structure alignment.' },
+    ]}
+    outcomes={['Stronger governance and data discipline', 'Increased customer trust', 'Long-term scalability support', 'Audit readiness confidence']}
+    ctaLabel="Start Your Compliance Roadmap"
+    ctaHref="/en/contact/"
+  />
+</BaseLayout>
