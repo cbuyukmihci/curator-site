@@ -9,45 +9,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <main class="pt-20">
     <!-- Hero Section -->
-    <section class="relative px-6 md:px-8 py-32 md:py-48 flex flex-col items-center justify-center text-center overflow-hidden bg-surface">
-      <div class="max-w-5xl z-10">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">
-          Büyüyün, Uyum Sağlayın, <br />
-          <span class="text-on-primary-container">Daha Büyük Fırsatlara Hazır Olun.</span>
-        </h1>
-        <p class="text-lg md:text-xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
-          Endüstriyel, savunma ve teknoloji odaklı şirketlere pazar geliştirme, tedarikçi hazırlığı,
-          uyumluluk, IT/bulut çözümleri ve stratejik finans desteği sağlıyoruz.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/tr/iletisim/"
-            class="signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all active:scale-[0.98]"
-          >
-            Toplantı Planla
-          </a>
-          <a
-            href="/tr/hizmetler/"
-            class="text-primary-container ghost-border px-10 py-4 rounded-lg font-bold text-lg hover:bg-surface-container-low transition-all"
-          >
-            Hizmetleri Keşfet
-          </a>
+    <section class="relative px-6 md:px-8 py-20 md:py-32 bg-surface overflow-hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="z-10">
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">
+            Büyüyün, Uyum Sağlayın, <br />
+            <span class="text-on-primary-container">Daha Büyük Fırsatlara Hazır Olun.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+            Endüstriyel, savunma ve teknoloji odaklı şirketlere pazar geliştirme, tedarikçi hazırlığı,
+            uyumluluk, IT/bulut çözümleri ve stratejik finans desteği sağlıyoruz.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/tr/iletisim/"
+              class="signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all active:scale-[0.98] text-center"
+            >
+              Toplantı Planla
+            </a>
+            <a
+              href="/tr/hizmetler/"
+              class="text-primary-container ghost-border px-10 py-4 rounded-lg font-bold text-lg hover:bg-surface-container-low transition-all text-center"
+            >
+              Hizmetleri Keşfet
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/images/hero-growth.svg" alt="Büyüme grafikleri" class="w-full rounded-xl" loading="eager" />
         </div>
       </div>
 
-      <!-- Technical Data Markers (DESIGN.md: Micro-Precision aesthetic) -->
-      <div class="absolute top-1/4 left-10 opacity-10 hidden lg:block">
+      <!-- Technical Data Markers -->
+      <div class="absolute top-1/4 left-10 opacity-10 hidden xl:block">
         <div class="text-[10px] font-mono tracking-widest uppercase mb-2">System.Compliance_Status</div>
         <div class="w-32 h-[1px] bg-primary-container"></div>
-      </div>
-      <div class="absolute bottom-1/4 right-10 opacity-10 hidden lg:block text-right">
-        <div class="text-[10px] font-mono tracking-widest uppercase mb-2">Growth.Matrix_Active</div>
-        <div class="w-48 h-[1px] bg-primary-container ml-auto"></div>
       </div>
     </section>
 
     <!-- Value Proposition Pillars -->
-    <section class="bg-surface-container-low py-32 px-6 md:px-8">
+    <section class="bg-surface-container-low py-20 md:py-24 px-6 md:px-8">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
           <div class="space-y-6">
@@ -82,9 +83,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Services Section (Bento Grid) -->
-    <section class="py-32 px-6 md:px-8 bg-surface">
+    <section class="py-20 md:py-24 px-6 md:px-8 bg-surface">
       <div class="max-w-7xl mx-auto">
-        <div class="mb-20">
+        <div class="mb-14">
           <span class="text-xs font-bold tracking-[0.2em] text-on-primary-container uppercase block mb-4">Temel Yetkinlikler</span>
           <h2 class="text-4xl md:text-5xl font-extrabold text-primary-container font-headline">Ne Yapıyoruz</h2>
         </div>
@@ -134,7 +135,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Who We Help Section -->
-    <section class="py-32 px-6 md:px-8 bg-surface-container-low">
+    <section class="py-20 md:py-24 px-6 md:px-8 bg-surface-container-low">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -177,7 +178,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <img src="/images/hero-team.svg" alt="Curator ekibi" class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="absolute -bottom-6 -right-6 bg-primary-container text-white p-8 rounded-lg max-w-xs ambient-shadow hidden md:block">
-              <p class="text-sm italic opacity-80 mb-4">"Curator uyumluluk yol haritamızı yeniden tanımlayarak bize aylarca sürecek düzenleyici sürtünmeden tasarruf ettirdi."</p>
+              <p class="text-sm italic mb-4">"Curator uyumluluk yol haritamızı yeniden tanımlayarak bize aylarca sürecek düzenleyici sürtünmeden tasarruf ettirdi."</p>
               <p class="font-bold text-xs uppercase tracking-widest">— CTO, Global Endüstriyel Şirket</p>
             </div>
           </div>
@@ -186,9 +187,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- How We Work Section -->
-    <section class="py-32 px-6 md:px-8 bg-surface">
+    <section class="py-20 md:py-24 px-6 md:px-8 bg-surface">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-24">
+        <div class="text-center mb-14">
           <span class="text-xs font-bold tracking-[0.2em] text-on-primary-container uppercase block mb-4">Metodoloji</span>
           <h2 class="text-4xl font-extrabold text-primary-container font-headline">Hassasiyet Protokolü</h2>
         </div>
@@ -231,7 +232,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <p class="text-center text-xs font-bold tracking-[0.3em] text-on-surface-variant uppercase mb-12">
           Küresel Altyapı Liderlerinin Güvendiği Platform
         </p>
-        <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-40">
+        <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60">
           <div class="text-2xl font-black text-primary-container italic font-headline">SIEMENS</div>
           <div class="text-2xl font-black text-primary-container font-headline">LOGITECH</div>
           <div class="text-2xl font-black text-primary-container font-headline">RAYTHEON</div>
@@ -242,11 +243,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-32 px-6 md:px-8 bg-surface">
-      <div class="max-w-5xl mx-auto rounded-3xl signature-gradient p-12 md:p-24 text-center relative overflow-hidden">
+    <section class="py-20 md:py-24 px-6 md:px-8 bg-surface">
+      <div class="max-w-5xl mx-auto rounded-3xl signature-gradient p-12 md:p-20 text-center relative overflow-hidden">
         <div class="relative z-10">
-          <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 font-headline">İşletmenizi ölçeklendirmeye hazır mısınız?</h2>
-          <p class="text-on-primary-container text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 font-headline">İşletmenizi ölçeklendirmeye hazır mısınız?</h2>
+          <p class="text-white/70 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             Geleceği inşa eden hassasiyet odaklı endüstriyel şirketler ekosistemine katılın.
           </p>
           <a

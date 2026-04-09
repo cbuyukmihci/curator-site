@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" rx="12" fill="#f2f4f6"/>
+
+  <!-- Process flow -->
+  <!-- Step 1 -->
+  <g transform="translate(60, 80)">
+    <circle cx="40" cy="40" r="36" fill="white" stroke="#0b1f3b" stroke-width="2"/>
+    <text x="40" y="36" text-anchor="middle" font-family="Manrope, sans-serif" font-size="20" fill="#0b1f3b" font-weight="800">01</text>
+    <text x="40" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3a5069" font-weight="600">ASSESS</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M140 120 L200 120" stroke="#0b1f3b" stroke-width="1.5" opacity="0.2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(210, 80)">
+    <circle cx="40" cy="40" r="36" fill="white" stroke="#0b1f3b" stroke-width="2"/>
+    <text x="40" y="36" text-anchor="middle" font-family="Manrope, sans-serif" font-size="20" fill="#0b1f3b" font-weight="800">02</text>
+    <text x="40" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3a5069" font-weight="600">PLAN</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M290 120 L350 120" stroke="#0b1f3b" stroke-width="1.5" opacity="0.2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3 (highlighted) -->
+  <g transform="translate(360, 80)">
+    <circle cx="40" cy="40" r="36" fill="#0b1f3b"/>
+    <text x="40" y="36" text-anchor="middle" font-family="Manrope, sans-serif" font-size="20" fill="white" font-weight="800">03</text>
+    <text x="40" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" opacity="0.8" font-weight="600">EXECUTE</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M440 120 L500 120" stroke="#0b1f3b" stroke-width="1.5" opacity="0.2" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(510, 80)">
+    <circle cx="40" cy="40" r="36" fill="white" stroke="#0b1f3b" stroke-width="2"/>
+    <text x="40" y="36" text-anchor="middle" font-family="Manrope, sans-serif" font-size="20" fill="#0b1f3b" font-weight="800">04</text>
+    <text x="40" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3a5069" font-weight="600">IMPROVE</text>
+  </g>
+
+  <!-- Gantt-like chart below -->
+  <g transform="translate(60, 200)">
+    <!-- Rows -->
+    <rect x="0" y="0" width="480" height="35" rx="4" fill="white" opacity="0.6"/>
+    <rect x="0" y="45" width="480" height="35" rx="4" fill="white" opacity="0.6"/>
+    <rect x="0" y="90" width="480" height="35" rx="4" fill="white" opacity="0.6"/>
+    <rect x="0" y="135" width="480" height="35" rx="4" fill="white" opacity="0.6"/>
+
+    <!-- Labels -->
+    <text x="12" y="22" font-family="Inter, sans-serif" font-size="10" fill="#0b1f3b" font-weight="600">Strategy</text>
+    <text x="12" y="67" font-family="Inter, sans-serif" font-size="10" fill="#0b1f3b" font-weight="600">Compliance</text>
+    <text x="12" y="112" font-family="Inter, sans-serif" font-size="10" fill="#0b1f3b" font-weight="600">IT Systems</text>
+    <text x="12" y="157" font-family="Inter, sans-serif" font-size="10" fill="#0b1f3b" font-weight="600">Finance</text>
+
+    <!-- Bars -->
+    <rect x="100" y="8" width="200" height="18" rx="9" fill="#0b1f3b" opacity="0.7"/>
+    <rect x="150" y="53" width="250" height="18" rx="9" fill="#2a6bc4" opacity="0.5"/>
+    <rect x="200" y="98" width="180" height="18" rx="9" fill="#0b1f3b" opacity="0.4"/>
+    <rect x="280" y="143" width="150" height="18" rx="9" fill="#2a6bc4" opacity="0.35"/>
+
+    <!-- Progress markers -->
+    <circle cx="220" cy="17" r="3" fill="white"/>
+    <circle cx="300" cy="62" r="3" fill="white"/>
+  </g>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6" fill="none" stroke="#0b1f3b" stroke-width="1" opacity="0.3"/>
+    </marker>
+  </defs>
+</svg>

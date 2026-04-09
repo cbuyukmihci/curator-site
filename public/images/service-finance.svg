@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" rx="12" fill="#f2f4f6"/>
+
+  <!-- Pie chart -->
+  <circle cx="240" cy="200" r="100" fill="white" stroke="#eceef0" stroke-width="1"/>
+  <path d="M240 200 L240 100 A100 100 0 0 1 327 150 Z" fill="#0b1f3b" opacity="0.8"/>
+  <path d="M240 200 L327 150 A100 100 0 0 1 340 200 Z" fill="#2a6bc4" opacity="0.6"/>
+  <path d="M240 200 L340 200 A100 100 0 0 1 290 290 Z" fill="#0b1f3b" opacity="0.4"/>
+  <path d="M240 200 L290 290 A100 100 0 0 1 160 270 Z" fill="#2a6bc4" opacity="0.3"/>
+  <path d="M240 200 L160 270 A100 100 0 0 1 240 100 Z" fill="#0b1f3b" opacity="0.15"/>
+  <circle cx="240" cy="200" r="45" fill="#f2f4f6"/>
+  <text x="240" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#3a5069" font-weight="600">VALUATION</text>
+  <text x="240" y="215" text-anchor="middle" font-family="Manrope, sans-serif" font-size="18" fill="#0b1f3b" font-weight="800">$24M</text>
+
+  <!-- Bar chart right side -->
+  <g transform="translate(400, 100)">
+    <rect x="0" y="140" width="30" height="100" rx="4" fill="#0b1f3b" opacity="0.15"/>
+    <rect x="40" y="100" width="30" height="140" rx="4" fill="#0b1f3b" opacity="0.25"/>
+    <rect x="80" y="60" width="30" height="180" rx="4" fill="#2a6bc4" opacity="0.35"/>
+    <rect x="120" y="20" width="30" height="220" rx="4" fill="#0b1f3b" opacity="0.7"/>
+
+    <text x="15" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#3a5069">Q1</text>
+    <text x="55" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#3a5069">Q2</text>
+    <text x="95" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#3a5069">Q3</text>
+    <text x="135" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#3a5069">Q4</text>
+  </g>
+
+  <!-- Growth arrow -->
+  <path d="M415 220 L540 120" stroke="#2a6bc4" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <circle cx="540" cy="120" r="4" fill="#2a6bc4" opacity="0.6"/>
+
+  <!-- Card -->
+  <g transform="translate(380, 50)">
+    <rect width="160" height="50" rx="10" fill="white" filter="url(#fShadow)"/>
+    <text x="14" y="22" font-family="Inter, sans-serif" font-size="9" fill="#3a5069" font-weight="600">REVENUE GROWTH</text>
+    <text x="14" y="40" font-family="Manrope, sans-serif" font-size="18" fill="#0b1f3b" font-weight="800">+32% YoY</text>
+  </g>
+
+  <defs>
+    <filter id="fShadow" x="-10%" y="-10%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#071b37" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+</svg>
