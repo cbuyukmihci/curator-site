@@ -1,40 +1,32 @@
 @import "tailwindcss";
 
 /*
- * CURATOR Design System v2 — "Precision & Authority"
- * Dark navy foundation + warm gold accents
+ * CURATOR Design System — "Obsidian & Gold"
+ * Fully dark theme with gold accents
  */
 
 @theme {
   /* ── Core Palette ── */
   --color-navy: #0a0f1e;
-  --color-navy-light: #111827;
-  --color-navy-card: #1a2236;
-  --color-navy-border: #232d42;
+  --color-navy-light: #0f172a;
+  --color-navy-card: #131c33;
+  --color-navy-elevated: #1a2340;
+  --color-navy-border: #2a3551;
 
-  --color-gold: #b8941f;
-  --color-gold-light: #d4aa2a;
-  --color-gold-soft: #f5e6b8;
-
-  --color-slate: #f8fafc;
-  --color-slate-dark: #f1f5f9;
-  --color-white: #ffffff;
+  --color-gold: #d4aa2a;
+  --color-gold-light: #e8c84a;
+  --color-gold-dark: #b8941f;
 
   /* ── Semantic Text ── */
-  --color-heading: #0a0f1e;
-  --color-body: #475569;
-  --color-muted: #94a3b8;
+  --color-heading: #ffffff;
+  --color-body: #cbd5e1;
+  --color-muted: #64748b;
   --color-on-dark: #ffffff;
-  --color-on-dark-secondary: #94a3b8;
+  --color-on-dark-secondary: #cbd5e1;
   --color-on-dark-muted: #64748b;
 
-  /* ── Borders & Outlines ── */
-  --color-border: #e2e8f0;
-  --color-border-dark: #1e293b;
-
-  /* ── Functional ── */
-  --color-error: #dc2626;
-  --color-success: #16a34a;
+  /* ── Borders ── */
+  --color-border: #2a3551;
 
   /* ── Typography ── */
   --font-display: "Manrope", system-ui, sans-serif;
@@ -50,136 +42,193 @@
   --radius-3xl: 1.5rem;
 }
 
-/* ── Base Styles ── */
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0f1e;
+}
+
 body {
   font-family: var(--font-body);
-  background-color: var(--color-white);
-  color: var(--color-body);
+  background-color: #0a0f1e;
+  color: #cbd5e1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
-  color: var(--color-heading);
+  color: #ffffff;
 }
 
-/* ── Design Utilities ── */
+/* ── Form Inputs — Dark Theme ── */
+input, textarea, select {
+  color: #ffffff;
+  color-scheme: dark;
+}
+input::placeholder, textarea::placeholder {
+  color: rgba(148, 163, 184, 0.45);
+}
+select option {
+  background-color: #131c33;
+  color: #ffffff;
+}
 
-/* Navy gradient background */
+/* ── Class Overrides: make "light" utilities render dark ── */
+@layer utilities {
+  .bg-white {
+    background-color: #0a0f1e !important;
+  }
+  .bg-slate {
+    background-color: #0f172a !important;
+  }
+}
+
+/* ── Hero Background — elevated dark gradient ── */
 .bg-hero {
-  background: linear-gradient(160deg, #080d1a 0%, #0f172a 40%, #131b30 100%);
+  background:
+    radial-gradient(ellipse at top right, rgba(212, 170, 42, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    linear-gradient(160deg, #0a0f1e 0%, #0f172a 50%, #131c33 100%);
+  position: relative;
 }
 
-/* Gold gradient for buttons */
+/* Grid texture overlay */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(212, 170, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 170, 42, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Gold Button ── */
 .btn-gold {
-  background: linear-gradient(135deg, #b8941f 0%, #d4aa2a 100%);
+  background: linear-gradient(135deg, #b8941f 0%, #d4aa2a 50%, #e8c84a 100%);
   color: #0a0f1e;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(212, 170, 42, 0.25), 0 0 0 1px rgba(212, 170, 42, 0.3) inset;
 }
 .btn-gold:hover {
-  background: linear-gradient(135deg, #d4aa2a 0%, #e8c84a 100%);
+  background: linear-gradient(135deg, #d4aa2a 0%, #e8c84a 50%, #f5d65a 100%);
+  box-shadow: 0 6px 30px rgba(212, 170, 42, 0.45), 0 0 0 1px rgba(232, 200, 74, 0.5) inset;
   transform: translateY(-1px);
 }
 
-/* Ghost button on dark */
+/* ── Ghost Button ── */
 .btn-ghost-light {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   font-weight: 600;
-  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
 }
 .btn-ghost-light:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(212, 170, 42, 0.06);
+  border-color: rgba(212, 170, 42, 0.4);
 }
 
-/* Card styles */
-.card-light {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s;
-}
-.card-light:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
+/* ── Cards — both card-light and card-dark render as dark elevated ── */
+.card-light,
 .card-dark {
-  background: #1a2236;
-  border: 1px solid #232d42;
-  transition: all 0.3s;
+  background: #131c33;
+  border: 1px solid #1f2940;
+  transition: all 0.3s ease;
+  position: relative;
 }
+.card-light:hover,
 .card-dark:hover {
-  border-color: #2d3a52;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: #1a2340;
+  border-color: rgba(212, 170, 42, 0.3);
+  transform: translateY(-4px);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(212, 170, 42, 0.08);
 }
 
-/* Gold accent line */
+/* ── Icon Box: bg-navy with direct material icon child → gold-tinted ── */
+.bg-navy:has(> .material-symbols-outlined) {
+  background-color: rgba(212, 170, 42, 0.08) !important;
+  border: 1px solid rgba(212, 170, 42, 0.25);
+  box-shadow: 0 0 30px rgba(212, 170, 42, 0.08);
+}
+
+/* Fallback for browsers without :has() — target common icon box patterns */
+.w-12.h-12.bg-navy,
+.w-14.h-14.bg-navy,
+.w-11.h-11.bg-navy,
+.w-16.h-16.bg-navy {
+  background-color: rgba(212, 170, 42, 0.08) !important;
+  border: 1px solid rgba(212, 170, 42, 0.25);
+}
+
+/* ── Gold Accent Line ── */
 .accent-line {
   width: 48px;
-  height: 3px;
-  background: linear-gradient(90deg, #b8941f, #d4aa2a);
+  height: 2px;
+  background: linear-gradient(90deg, #b8941f, #e8c84a);
   border-radius: 2px;
+  box-shadow: 0 0 12px rgba(212, 170, 42, 0.4);
 }
 
-/* Subtle grid pattern for hero backgrounds */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-/* Glow effect behind accent elements */
-.gold-glow {
-  box-shadow: 0 0 60px rgba(184, 148, 31, 0.15);
-}
-
-/* Section divider */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-}
-
-/* Dark section divider */
-.section-divider-dark {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #232d42, transparent);
-}
-
-/* Glassmorphism nav */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-}
-
-/* Stat number animation-ready */
+/* ── Stat Number (gold gradient text) ── */
 .stat-number {
   font-family: var(--font-display);
   font-weight: 800;
-  background: linear-gradient(135deg, #b8941f, #d4aa2a);
+  background: linear-gradient(135deg, #d4aa2a 0%, #f5d65a 50%, #d4aa2a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 40px rgba(212, 170, 42, 0.2);
 }
 
-/* Material Symbols */
+/* ── Glass Nav (dark) ── */
+.glass-nav {
+  background: rgba(10, 15, 30, 0.75);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(42, 53, 81, 0.5);
+}
+
+/* ── Gold Glow ── */
+.gold-glow {
+  box-shadow: 0 0 60px rgba(212, 170, 42, 0.2);
+}
+
+/* ── Section Dividers ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(42, 53, 81, 0.8), transparent);
+}
+
+/* ── Prose overrides for blog content on dark bg ── */
+.prose {
+  color: #cbd5e1;
+}
+.prose strong { color: #ffffff; }
+.prose a { color: #e8c84a; }
+.prose a:hover { color: #f5d65a; }
+.prose code {
+  background: #131c33;
+  color: #e8c84a;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  border: 1px solid #1f2940;
+}
+.prose blockquote {
+  border-left-color: #d4aa2a;
+  color: #cbd5e1;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(212, 170, 42, 0.3);
+  color: #ffffff;
+}
+
+/* ── Material Symbols ── */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection */
-::selection {
-  background: rgba(184, 148, 31, 0.2);
-  color: #0a0f1e;
 }

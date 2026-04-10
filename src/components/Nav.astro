@@ -36,9 +36,9 @@ const altLabel = isEn ? 'TR' : 'EN';
   <div class="flex justify-between items-center w-full px-6 lg:px-12 py-4 max-w-7xl mx-auto">
     <!-- Logo -->
     <a href={isEn ? '/en/' : '/tr/'} class="flex items-center gap-2">
-      <span class="text-xl font-extrabold tracking-tight text-navy font-display">CURATOR</span>
-      <span class="hidden sm:block w-[1px] h-5 bg-border mx-1"></span>
-      <span class="hidden sm:block text-[10px] font-medium tracking-[0.15em] uppercase text-muted">Advisory</span>
+      <span class="text-xl font-extrabold tracking-tight text-white font-display">CURATOR</span>
+      <span class="hidden sm:block w-[1px] h-5 bg-white/20 mx-1"></span>
+      <span class="hidden sm:block text-[10px] font-medium tracking-[0.15em] uppercase text-gold">Advisory</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -50,8 +50,8 @@ const altLabel = isEn ? 'TR' : 'EN';
             href={link.href}
             class={`text-[13px] font-medium transition-colors ${
               isActive
-                ? 'text-navy'
-                : 'text-body hover:text-navy'
+                ? 'text-gold'
+                : 'text-on-dark-secondary hover:text-gold'
             }`}
           >
             {link.label}
@@ -64,7 +64,7 @@ const altLabel = isEn ? 'TR' : 'EN';
     <div class="flex items-center gap-3">
       <a
         href={altPath}
-        class="text-xs font-semibold tracking-wider text-muted hover:text-navy transition-colors px-2 py-1"
+        class="text-xs font-semibold tracking-wider text-on-dark-secondary hover:text-gold transition-colors px-2 py-1 border border-white/10 hover:border-gold/40 rounded"
       >
         {altLabel}
       </a>
@@ -82,20 +82,20 @@ const altLabel = isEn ? 'TR' : 'EN';
         class="lg:hidden flex flex-col gap-1.5 p-2"
         aria-label="Menu"
       >
-        <span class="block w-5 h-[2px] bg-navy transition-transform" id="bar1"></span>
-        <span class="block w-5 h-[2px] bg-navy transition-opacity" id="bar2"></span>
-        <span class="block w-5 h-[2px] bg-navy transition-transform" id="bar3"></span>
+        <span class="block w-5 h-[2px] bg-white transition-transform" id="bar1"></span>
+        <span class="block w-5 h-[2px] bg-white transition-opacity" id="bar2"></span>
+        <span class="block w-5 h-[2px] bg-white transition-transform" id="bar3"></span>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10" style="background: rgba(10, 15, 30, 0.95); backdrop-filter: blur(20px);">
     <div class="px-6 py-6 space-y-1 max-w-7xl mx-auto">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="block text-sm font-medium text-body hover:text-navy transition-colors py-3 border-b border-slate"
+          class="block text-sm font-medium text-on-dark-secondary hover:text-gold transition-colors py-3 border-b border-white/5"
         >
           {link.label}
         </a>
