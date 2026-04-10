@@ -9,27 +9,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <main class="pt-20">
     <!-- Hero Section -->
-    <section class="relative px-6 md:px-8 py-20 md:py-32 bg-surface overflow-hidden">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="z-10">
-          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">
+    <section class="relative px-6 md:px-8 py-20 md:py-32 signature-gradient overflow-hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1] font-headline">
             Büyüyün, Uyum Sağlayın, <br />
-            <span class="text-on-primary-container">Daha Büyük Fırsatlara Hazır Olun.</span>
+            <span class="text-white/70">Daha Büyük Fırsatlara Hazır Olun.</span>
           </h1>
-          <p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+          <p class="text-lg md:text-xl text-white/60 max-w-xl mb-10 leading-relaxed">
             Endüstriyel, savunma ve teknoloji odaklı şirketlere pazar geliştirme, tedarikçi hazırlığı,
             uyumluluk, IT/bulut çözümleri ve stratejik finans desteği sağlıyoruz.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/tr/iletisim/"
-              class="signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all active:scale-[0.98] text-center"
+              class="bg-white text-primary-container px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/90 transition-all active:scale-[0.98] text-center"
             >
               Toplantı Planla
             </a>
             <a
               href="/tr/hizmetler/"
-              class="text-primary-container ghost-border px-10 py-4 rounded-lg font-bold text-lg hover:bg-surface-container-low transition-all text-center"
+              class="text-white border border-white/20 px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all text-center"
             >
               Hizmetleri Keşfet
             </a>
@@ -40,10 +40,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
       </div>
 
+      <!-- Decorative elements -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-secondary-container/5 rounded-full blur-3xl"></div>
+
       <!-- Technical Data Markers -->
-      <div class="absolute top-1/4 left-10 opacity-10 hidden xl:block">
-        <div class="text-[10px] font-mono tracking-widest uppercase mb-2">System.Compliance_Status</div>
-        <div class="w-32 h-[1px] bg-primary-container"></div>
+      <div class="absolute top-1/4 left-10 opacity-20 hidden xl:block">
+        <div class="text-[10px] font-mono tracking-widest uppercase mb-2 text-white">System.Compliance_Status</div>
+        <div class="w-32 h-[1px] bg-white/30"></div>
       </div>
     </section>
 
@@ -94,17 +98,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="md:col-span-3 bg-surface-container-lowest p-10 rounded-xl ghost-border hover:ambient-shadow transition-all">
             <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">public</span>
             <h4 class="text-xl font-bold mb-4 font-headline">Stratejik Büyüme & Pazar Geliştirme</h4>
-            <p class="text-secondary text-sm leading-relaxed">
+            <p class="text-secondary text-sm leading-relaxed mb-6">
               Yeni sektörlere girmek, yeni müşteri gruplarına ulaşmak veya daha odaklı bir büyüme stratejisi oluşturmak isteyen şirketlere destek veriyoruz.
             </p>
+            <img src="/images/strategy.jpg" alt="Stratejik planlama" class="w-full h-48 object-cover rounded-lg grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700" loading="lazy" />
           </div>
           <!-- Supplier Development -->
           <div class="md:col-span-3 bg-surface-container-lowest p-10 rounded-xl ghost-border hover:ambient-shadow transition-all">
             <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">inventory</span>
             <h4 class="text-xl font-bold mb-4 font-headline">Tedarikçi Geliştirme & Denetim</h4>
-            <p class="text-secondary text-sm leading-relaxed">
+            <p class="text-secondary text-sm leading-relaxed mb-6">
               Tedarikçilerin nerede durduğunu anlamasına, kritik açıkları kapatmasına ve daha sıkı müşteri beklentilerine hazırlanmasına yardımcı oluyoruz.
             </p>
+            <img src="/images/audit.jpg" alt="Denetim süreci" class="w-full h-48 object-cover rounded-lg grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700" loading="lazy" />
           </div>
           <!-- Compliance -->
           <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl ghost-border hover:ambient-shadow transition-all">
@@ -175,7 +181,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
           <div class="relative">
             <div class="aspect-[4/3] bg-surface-container rounded-xl overflow-hidden">
-              <img src="/images/hero-team.svg" alt="Curator ekibi" class="w-full h-full object-cover" loading="lazy" />
+              <img src="/images/meeting.jpg" alt="Curator ekibi toplantı" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" loading="lazy" />
             </div>
             <div class="absolute -bottom-6 -right-6 bg-primary-container text-white p-8 rounded-lg max-w-xs ambient-shadow hidden md:block">
               <p class="text-sm italic mb-4">"Curator uyumluluk yol haritamızı yeniden tanımlayarak bize aylarca sürecek düzenleyici sürtünmeden tasarruf ettirdi."</p>
@@ -227,17 +233,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Trust Section -->
-    <section class="py-20 bg-surface-container-low">
+    <section class="py-20 bg-primary-container">
       <div class="max-w-7xl mx-auto px-6 md:px-8">
-        <p class="text-center text-xs font-bold tracking-[0.3em] text-on-surface-variant uppercase mb-12">
+        <p class="text-center text-xs font-bold tracking-[0.3em] text-white/50 uppercase mb-12">
           Küresel Altyapı Liderlerinin Güvendiği Platform
         </p>
-        <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60">
-          <div class="text-2xl font-black text-primary-container italic font-headline">SIEMENS</div>
-          <div class="text-2xl font-black text-primary-container font-headline">LOGITECH</div>
-          <div class="text-2xl font-black text-primary-container font-headline">RAYTHEON</div>
-          <div class="text-2xl font-black text-primary-container italic font-headline">AIRBUS</div>
-          <div class="text-2xl font-black text-primary-container font-headline">ABB</div>
+        <div class="flex flex-wrap justify-center gap-12 md:gap-24">
+          <div class="text-2xl font-black text-white/40 italic font-headline">SIEMENS</div>
+          <div class="text-2xl font-black text-white/40 font-headline">LOGITECH</div>
+          <div class="text-2xl font-black text-white/40 font-headline">RAYTHEON</div>
+          <div class="text-2xl font-black text-white/40 italic font-headline">AIRBUS</div>
+          <div class="text-2xl font-black text-white/40 font-headline">ABB</div>
         </div>
       </div>
     </section>

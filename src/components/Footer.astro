@@ -49,25 +49,25 @@ const copyright = isEn
   : '© 2025 Curator B2B Danışmanlık. Tüm hakları saklıdır.';
 ---
 
-<footer class="bg-surface-container-low">
+<footer class="signature-gradient text-white">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-6 md:px-12 py-20 max-w-7xl mx-auto">
     <!-- Brand Column -->
     <div class="space-y-6">
-      <div class="text-lg font-extrabold tracking-widest uppercase text-primary-container font-headline">CURATOR</div>
-      <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs">
+      <div class="text-lg font-extrabold tracking-widest uppercase text-white font-headline">CURATOR</div>
+      <p class="text-white/60 text-sm leading-relaxed max-w-xs">
         {tagline}
       </p>
     </div>
 
     <!-- Services Column -->
     <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{servicesTitle}</h5>
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{servicesTitle}</h5>
       <ul class="space-y-3">
         {serviceLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class="text-on-surface-variant text-sm hover:text-primary-container transition-colors"
+              class="text-white/60 text-sm hover:text-white transition-colors"
             >
               {link.label}
             </a>
@@ -78,13 +78,13 @@ const copyright = isEn
 
     <!-- Company Column -->
     <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{companyTitle}</h5>
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{companyTitle}</h5>
       <ul class="space-y-3">
         {companyLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class="text-on-surface-variant text-sm hover:text-primary-container transition-colors"
+              class="text-white/60 text-sm hover:text-white transition-colors"
             >
               {link.label}
             </a>
@@ -95,15 +95,15 @@ const copyright = isEn
 
     <!-- Newsletter Column -->
     <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-primary-container">{newsletterTitle}</h5>
-      <p class="text-on-surface-variant text-sm">{newsletterText}</p>
-      <div class="flex ghost-border rounded-lg overflow-hidden">
+      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{newsletterTitle}</h5>
+      <p class="text-white/60 text-sm">{newsletterText}</p>
+      <div class="flex border border-white/20 rounded-lg overflow-hidden">
         <input
           type="email"
           placeholder={emailPlaceholder}
-          class="bg-transparent text-sm w-full px-4 py-2.5 border-none focus:outline-none focus:ring-0 text-on-surface"
+          class="bg-transparent text-sm w-full px-4 py-2.5 border-none focus:outline-none focus:ring-0 text-white placeholder-white/40"
         />
-        <button class="bg-primary-container text-white px-4 py-2.5 text-xs font-bold uppercase tracking-widest shrink-0 hover:opacity-90 transition-opacity">
+        <button class="bg-white text-primary-container px-4 py-2.5 text-xs font-bold uppercase tracking-widest shrink-0 hover:bg-white/90 transition-opacity">
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
       </div>
@@ -111,8 +111,8 @@ const copyright = isEn
   </div>
 
   <!-- Bottom Bar -->
-  <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 border-t border-outline-variant/10">
-    <p class="text-on-surface-variant text-xs text-center leading-relaxed">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 border-t border-white/10">
+    <p class="text-white/40 text-xs text-center leading-relaxed">
       {copyright}
     </p>
   </div>
