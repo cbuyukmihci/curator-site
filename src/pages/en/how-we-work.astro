@@ -1,45 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const steps = [
+  { num: '01', title: 'Assess', desc: 'We review the current situation, goals, constraints, and opportunity areas.', tags: ['Risk Audit', 'Data Synthesis'] },
+  { num: '02', title: 'Plan', desc: 'We define a practical roadmap with clear priorities and the right service mix.', tags: ['Strategy Mapping', 'Compliance Path'] },
+  { num: '03', title: 'Execute', desc: 'We coordinate delivery through in-house advisory scope and specialist solution partners.', tags: ['Tech Integration', 'Change Mgmt'] },
+  { num: '04', title: 'Improve', desc: 'We support readiness, progress tracking, and next-stage planning.', tags: ['Market Capture', 'Continuous Growth'] },
+];
 ---
 
 <BaseLayout title="How We Work | CURATOR" description="A clear method from assessment to execution." locale="en">
-  <main class="pt-20">
-    <section class="px-6 md:px-8 py-24 md:py-32 bg-surface">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <span class="text-xs tracking-widest uppercase text-on-primary-container font-bold mb-6 block">Our Methodology</span>
-          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">
-            A Clear Method from <br /><span class="text-secondary">Assessment to Execution.</span>
+  <main>
+    <section class="bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 md:pt-40 md:pb-28 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="accent-line"></div>
+            <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">Our Methodology</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight font-display mb-6">
+            A Clear Method from Assessment to Execution.
           </h1>
-          <p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">
+          <p class="text-on-dark-secondary text-lg leading-relaxed max-w-2xl">
             We start with the business need, define priorities, and coordinate the right capabilities to move the company forward.
           </p>
         </div>
-        <div class="lg:col-span-5">
-          <img src="/images/methodology.svg" alt="Methodology process" class="w-full rounded-xl" loading="eager" />
-        </div>
       </div>
+      <div class="absolute top-20 right-[10%] w-72 h-72 bg-gold/5 rounded-full blur-[100px]"></div>
     </section>
 
-    <section class="bg-surface-container-low py-20 md:py-24 px-6 md:px-8">
-      <div class="max-w-7xl mx-auto">
+    <section class="py-24 md:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { num: '01', title: 'Assess', desc: 'We review the current situation, goals, constraints, and opportunity areas.', tags: ['Risk Audit', 'Data Synthesis'] },
-            { num: '02', title: 'Plan', desc: 'We define a practical roadmap with clear priorities and the right service mix.', tags: ['Strategy Mapping', 'Compliance Path'] },
-            { num: '03', title: 'Execute', desc: 'We coordinate delivery through in-house advisory scope and specialist solution partners.', tags: ['Tech Integration', 'Change Mgmt'] },
-            { num: '04', title: 'Improve', desc: 'We support readiness, progress tracking, and next-stage planning.', tags: ['Market Capture', 'Continuous Growth'] },
-          ].map((step, i) => (
-            <div class={`bg-surface-container-lowest p-10 rounded-xl group hover:ambient-shadow transition-all flex flex-col h-full ${i === 2 ? 'border-t-4 border-primary' : ''}`}>
-              <div class="mb-12">
-                <span class="text-6xl font-black text-outline-variant/20 group-hover:text-secondary/20 transition-colors font-headline">{step.num}</span>
-                <h3 class="text-2xl font-bold text-primary-container mt-4 font-headline">{step.title}</h3>
-              </div>
-              <p class="text-on-surface-variant mb-12 flex-grow text-sm leading-relaxed">{step.desc}</p>
-              <div class="space-y-3 pt-6 border-t border-outline-variant/10">
+          {steps.map((step, i) => (
+            <div class={`card-light rounded-xl p-8 relative ${i === 2 ? 'border-t-2 border-t-gold' : ''}`}>
+              <span class="stat-number text-5xl font-extrabold block mb-6">{step.num}</span>
+              <h3 class="text-xl font-bold text-heading mb-3 font-display">{step.title}</h3>
+              <p class="text-body text-sm leading-relaxed mb-6">{step.desc}</p>
+              <div class="space-y-2 pt-4 border-t border-border">
                 {step.tags.map((tag) => (
-                  <div class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-secondary">
-                    <span class="w-1.5 h-1.5 bg-on-tertiary-container rounded-full"></span>
+                  <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted">
+                    <span class="w-1 h-1 bg-gold rounded-full"></span>
                     {tag}
                   </div>
                 ))}
@@ -50,22 +52,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- Statement -->
-    <section class="py-20 px-6 md:px-8 signature-gradient">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-white text-xl md:text-2xl font-bold leading-relaxed font-headline">
-          "Process discipline, precise timing, and coordinated execution — these three form the foundation of growth."
+    <section class="py-20 md:py-24 bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
+        <p class="text-white text-xl md:text-2xl font-bold leading-relaxed font-display">
+          Process discipline, precise timing, and coordinated execution — these three form the foundation of growth.
         </p>
       </div>
     </section>
 
-    <section class="py-24 px-6 md:px-8 bg-surface-container-low">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-primary-container mb-8 font-headline">Plan an Initial Assessment</h2>
-        <p class="text-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
-          Schedule a preliminary consultation to see how our 4-step framework can be applied to your unique industrial ecosystem.
-        </p>
-        <a href="/en/contact/" class="signature-gradient text-white px-10 py-4 rounded-lg font-bold hover:opacity-95 transition-all text-lg inline-block">
+    <section class="py-24 md:py-32 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight font-display mb-4">Plan an Initial Assessment</h2>
+        <p class="text-body mb-10">Schedule a preliminary consultation to see how our 4-step framework applies to your company.</p>
+        <a href="/en/contact/" class="btn-gold px-10 py-4 rounded-lg text-base inline-block">
           Book a Meeting
         </a>
       </div>

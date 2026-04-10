@@ -1,57 +1,83 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const partners = [
+  {
+    icon: 'cloud',
+    title: 'Teknoloji Partnerleri',
+    desc: 'Ağ, sistem, altyapı ve bulut yetkinlikleri güvenilir uzman partnerler aracılığıyla sunulur.',
+  },
+  {
+    icon: 'security',
+    title: 'Uyumluluk Partnerleri',
+    desc: 'KVKK ve ISO 27001 uzmanlığı deneyimli profesyoneller aracılığıyla sağlanır.',
+  },
+  {
+    icon: 'account_balance',
+    title: 'Finans Partnerleri',
+    desc: 'Değerleme, stratejik planlama ve giriş seviyesinde sermaye piyasası hazırlığı güvenilir finans uzmanları aracılığıyla sunulur.',
+  },
+];
 ---
 
 <BaseLayout title="Partnerler | CURATOR" description="Tek bir platform üzerinden koordine edilen uzman yetkinlik." locale="tr">
-  <main class="pt-20">
-    <section class="px-6 md:px-8 py-24 md:py-32 bg-surface">
-      <div class="max-w-4xl">
-        <span class="text-xs font-bold tracking-[0.2em] text-on-primary-container uppercase block mb-4">Partner Ekosistemi</span>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1] font-headline">
-          Uzman Yetkinlik, Tek Platform Üzerinden Koordine Edildi.
-        </h1>
-        <p class="text-lg text-secondary leading-relaxed">
-          Modelimiz ticari koordinasyonu gerekli durumlarda uzman uygulamayla birleştirir. Bu, müşterilere dağınık tedarikçi yönetimi yükü olmadan daha geniş yetkinliğe erişim sağlar.
+  <main>
+    <!-- Hero -->
+    <section class="bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 md:pt-40 md:pb-28 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="accent-line"></div>
+            <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">Partner Ekosistemi</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight font-display mb-6">
+            Uzman Yetkinlik, Tek Platform Üzerinden Koordine Edildi.
+          </h1>
+          <p class="text-on-dark-secondary text-lg leading-relaxed">
+            Modelimiz ticari koordinasyonu gerekli durumlarda uzman uygulamayla birleştirir. Müşterilere dağınık tedarikçi yönetimi yükü olmadan daha geniş yetkinliğe erişim sağlar.
+          </p>
+        </div>
+      </div>
+      <div class="absolute top-20 right-[10%] w-72 h-72 bg-gold/5 rounded-full blur-[100px]"></div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {partners.map((p) => (
+            <div class="card-light rounded-xl p-8">
+              <div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-gold text-xl">{p.icon}</span>
+              </div>
+              <h3 class="text-xl font-bold text-heading mb-4 font-display">{p.title}</h3>
+              <p class="text-body text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="py-20 md:py-24 bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
+        <div class="flex justify-center mb-8">
+          <div class="accent-line"></div>
+        </div>
+        <p class="text-white text-xl md:text-2xl font-bold leading-relaxed font-display">
+          Tek ilişki, çoklu yetkinlik, daha güçlü uygulama uyumu.
         </p>
       </div>
     </section>
 
-    <section class="py-24 px-6 md:px-8 bg-surface-container-low">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-surface-container-lowest p-10 rounded-xl ghost-border">
-          <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">cloud</span>
-          <h3 class="text-xl font-bold text-primary-container mb-4 font-headline">Teknoloji Partnerleri</h3>
-          <p class="text-secondary text-sm leading-relaxed">
-            Ağ, sistem, altyapı ve bulut yetkinlikleri güvenilir uzman partnerler aracılığıyla sunulur.
-          </p>
-        </div>
-        <div class="bg-surface-container-lowest p-10 rounded-xl ghost-border">
-          <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">security</span>
-          <h3 class="text-xl font-bold text-primary-container mb-4 font-headline">Uyumluluk Partnerleri</h3>
-          <p class="text-secondary text-sm leading-relaxed">
-            KVKK ve ISO 27001 uzmanlığı deneyimli profesyoneller aracılığıyla sağlanır.
-          </p>
-        </div>
-        <div class="bg-surface-container-lowest p-10 rounded-xl ghost-border">
-          <span class="material-symbols-outlined text-primary-container mb-6 block text-3xl">account_balance</span>
-          <h3 class="text-xl font-bold text-primary-container mb-4 font-headline">Finans Partnerleri</h3>
-          <p class="text-secondary text-sm leading-relaxed">
-            Değerleme, stratejik planlama ve giriş seviyesinde sermaye piyasası hazırlık desteği güvenilir finans uzmanları aracılığıyla sunulur.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 px-6 md:px-8 signature-gradient">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-xl text-white font-bold font-headline">Tek ilişki, çoklu yetkinlik, daha güçlü uygulama uyumu.</p>
-      </div>
-    </section>
-
-    <section class="py-24 px-6 md:px-8 bg-surface-container-low">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-extrabold text-primary-container mb-6 font-headline">Partner Destekli Çözümleri Keşfedin</h2>
-        <a href="/tr/iletisim/" class="inline-block signature-gradient text-white px-10 py-4 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all">
+    <!-- CTA -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight font-display mb-4">Partner Destekli Çözümleri Keşfedin</h2>
+        <p class="text-body mb-10">İhtiyaçlarınıza uygun yetkinlik kombinasyonunu birlikte planlayalım.</p>
+        <a href="/tr/iletisim/" class="btn-gold px-10 py-4 rounded-lg text-base inline-block">
           Toplantı Planla
         </a>
       </div>

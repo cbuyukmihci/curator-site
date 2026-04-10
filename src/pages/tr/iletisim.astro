@@ -3,67 +3,76 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="İletişim | CURATOR" description="Büyüme ve hazırlık önceliklerinizi konuşalım." locale="tr">
-  <main class="pt-20">
+  <main>
     <!-- Hero -->
-    <section class="px-6 md:px-8 py-16 md:py-24 bg-surface">
-      <div class="max-w-2xl">
-        <span class="text-xs tracking-widest uppercase text-on-primary-container font-bold mb-4 block">İletişim</span>
-        <h1 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tight text-primary-container mb-6">
-          Bir Sonraki <span class="text-on-tertiary-container">Adımınızı</span> Planlayalım.
-        </h1>
-        <p class="text-lg text-secondary leading-relaxed">
-          Danışmanlarımız endüstriyel hassasiyet ve stratejik büyümenin kesişim noktasında çalışır. Bir görüşme başlatmak için bizimle iletişime geçin.
-        </p>
+    <section class="bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-16 md:pt-40 md:pb-20 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="accent-line"></div>
+            <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">İletişim</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight font-display mb-6">
+            Bir Sonraki Adımınızı Planlayalım.
+          </h1>
+          <p class="text-on-dark-secondary text-lg leading-relaxed">
+            Danışmanlarımız endüstriyel hassasiyet ve stratejik büyümenin kesişim noktasında çalışır.
+          </p>
+        </div>
       </div>
+      <div class="absolute top-20 right-[10%] w-72 h-72 bg-gold/5 rounded-full blur-[100px]"></div>
     </section>
 
-    <section class="pb-24 px-6 md:px-8 bg-surface">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <!-- Contact Form -->
-        <div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl ghost-border">
-          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+    <!-- Form + Sidebar -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <!-- Form -->
+        <div class="lg:col-span-8">
+          <form action="https://api.web3forms.com/submit" method="POST" class="card-light rounded-2xl p-8 md:p-12 space-y-8">
             <input type="hidden" name="access_key" value="6e88065e-781b-4a82-b2e0-59ff7b377a36" />
             <input type="hidden" name="subject" value="Yeni Toplantı Talebi - Curator Web Sitesi" />
             <input type="hidden" name="from_name" value="Curator Web Sitesi" />
             <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="name">Ad Soyad</label>
+                <label class="text-xs uppercase tracking-widest text-muted font-bold" for="name">Ad Soyad</label>
                 <input
-                  class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm"
+                  class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                   id="name" name="name" type="text" placeholder="Adınız Soyadınız" required
                 />
               </div>
               <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="company">Şirket</label>
+                <label class="text-xs uppercase tracking-widest text-muted font-bold" for="company">Şirket</label>
                 <input
-                  class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm"
+                  class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                   id="company" name="company" type="text" placeholder="Şirket Adı"
                 />
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="email">E-posta</label>
+                <label class="text-xs uppercase tracking-widest text-muted font-bold" for="email">E-posta</label>
                 <input
-                  class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm"
+                  class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                   id="email" name="email" type="email" placeholder="ornek@sirket.com" required
                 />
               </div>
               <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="phone">Telefon</label>
+                <label class="text-xs uppercase tracking-widest text-muted font-bold" for="phone">Telefon</label>
                 <input
-                  class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm"
+                  class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                   id="phone" name="phone" type="tel" placeholder="+90 (5XX) XXX XX XX"
                 />
               </div>
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="interest">İlgi Alanı</label>
+              <label class="text-xs uppercase tracking-widest text-muted font-bold" for="interest">İlgi Alanı</label>
               <select
-                class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm appearance-none"
+                class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                 id="interest" name="interest"
               >
                 <option value="">Seçiniz</option>
@@ -77,72 +86,69 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
 
             <div class="space-y-2">
-              <label class="text-xs uppercase tracking-widest text-secondary font-bold" for="message">Mesajınız</label>
+              <label class="text-xs uppercase tracking-widest text-muted font-bold" for="message">Mesajınız</label>
               <textarea
-                class="w-full bg-surface-container-low ghost-border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-container/30 focus:border-primary transition-all text-sm"
+                class="w-full bg-slate border border-border px-4 py-3 rounded-lg focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all text-sm"
                 id="message" name="message" rows="5" placeholder="Şirketinizin mevcut durumu ve hedefleri hakkında kısa bilgi veriniz."
               ></textarea>
             </div>
 
-            <!-- Honeypot for spam -->
             <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
-            <div class="pt-4">
-              <button
-                type="submit"
-                class="signature-gradient text-white px-10 py-4 rounded-lg font-semibold tracking-widest uppercase text-xs active:scale-[0.98] transition-all w-full md:w-auto ambient-shadow"
-              >
-                Talebinizi Gönderin
-              </button>
-            </div>
+            <button
+              type="submit"
+              class="btn-gold px-10 py-4 rounded-lg text-base w-full md:w-auto"
+            >
+              Talebinizi Gönderin
+            </button>
           </form>
         </div>
 
         <!-- Sidebar -->
-        <aside class="lg:col-span-5 space-y-10">
+        <aside class="lg:col-span-4 space-y-10">
           <div>
-            <h3 class="text-xs uppercase tracking-[0.2em] text-on-primary-container font-bold mb-8">Bölge Ofisleri</h3>
-            <div class="space-y-8">
-              <div class="flex gap-6">
-                <div class="w-12 h-12 flex-shrink-0 bg-primary-container rounded-lg flex items-center justify-center">
-                  <span class="material-symbols-outlined text-white text-sm">location_on</span>
+            <h3 class="text-xs uppercase tracking-[0.2em] text-gold font-bold mb-6">Bölge Ofisleri</h3>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-11 h-11 shrink-0 bg-navy rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-gold text-base">location_on</span>
                 </div>
                 <div>
-                  <h4 class="font-headline font-bold text-primary-container">İstanbul Merkez</h4>
-                  <p class="text-sm text-secondary leading-relaxed mt-1">Levent, İstanbul</p>
+                  <h4 class="font-bold text-heading font-display">İstanbul Merkez</h4>
+                  <p class="text-sm text-body mt-1">Levent, İstanbul</p>
                 </div>
               </div>
-              <div class="flex gap-6">
-                <div class="w-12 h-12 flex-shrink-0 bg-primary-container rounded-lg flex items-center justify-center">
-                  <span class="material-symbols-outlined text-white text-sm">location_on</span>
+              <div class="flex gap-4">
+                <div class="w-11 h-11 shrink-0 bg-navy rounded-lg flex items-center justify-center">
+                  <span class="material-symbols-outlined text-gold text-base">location_on</span>
                 </div>
                 <div>
-                  <h4 class="font-headline font-bold text-primary-container">Ankara Ofis</h4>
-                  <p class="text-sm text-secondary leading-relaxed mt-1">Söğütözü, Ankara</p>
+                  <h4 class="font-bold text-heading font-display">Ankara Ofis</h4>
+                  <p class="text-sm text-body mt-1">Söğütözü, Ankara</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-surface-container-low p-8 rounded-xl space-y-6">
-            <h3 class="text-xs uppercase tracking-widest text-on-primary-container font-bold">Doğrudan Erişim</h3>
+          <div class="bg-slate rounded-xl p-6 space-y-5">
+            <h3 class="text-xs uppercase tracking-widest text-gold font-bold">Doğrudan Erişim</h3>
             <div class="space-y-4">
               <a href="mailto:info@curator.com.tr" class="flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center ghost-border transition-colors group-hover:bg-primary-container">
-                  <span class="material-symbols-outlined text-sm transition-colors group-hover:text-white">mail</span>
+                <div class="w-10 h-10 rounded-lg bg-white border border-border flex items-center justify-center group-hover:bg-navy group-hover:border-navy transition-colors">
+                  <span class="material-symbols-outlined text-sm text-body group-hover:text-gold transition-colors">mail</span>
                 </div>
                 <div>
-                  <p class="text-xs text-secondary uppercase tracking-tighter">E-posta</p>
-                  <p class="text-sm font-medium">info@curator.com.tr</p>
+                  <p class="text-xs text-muted uppercase tracking-wider font-semibold">E-posta</p>
+                  <p class="text-sm font-medium text-heading">info@curator.com.tr</p>
                 </div>
               </a>
               <a href="tel:+902121234567" class="flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center ghost-border transition-colors group-hover:bg-primary-container">
-                  <span class="material-symbols-outlined text-sm transition-colors group-hover:text-white">call</span>
+                <div class="w-10 h-10 rounded-lg bg-white border border-border flex items-center justify-center group-hover:bg-navy group-hover:border-navy transition-colors">
+                  <span class="material-symbols-outlined text-sm text-body group-hover:text-gold transition-colors">call</span>
                 </div>
                 <div>
-                  <p class="text-xs text-secondary uppercase tracking-tighter">Telefon</p>
-                  <p class="text-sm font-medium">+90 (212) 123 45 67</p>
+                  <p class="text-xs text-muted uppercase tracking-wider font-semibold">Telefon</p>
+                  <p class="text-sm font-medium text-heading">+90 (212) 123 45 67</p>
                 </div>
               </a>
             </div>

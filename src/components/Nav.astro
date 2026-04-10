@@ -14,7 +14,6 @@ const navLinks = isEn
       { label: 'Sectors', href: '/en/sectors/' },
       { label: 'Partners', href: '/en/partners/' },
       { label: 'Insights', href: '/en/insights/' },
-      { label: 'Contact', href: '/en/contact/' },
     ]
   : [
       { label: 'Hizmetler', href: '/tr/hizmetler/' },
@@ -23,7 +22,6 @@ const navLinks = isEn
       { label: 'Sektörler', href: '/tr/sektorler/' },
       { label: 'Partnerler', href: '/tr/partnerler/' },
       { label: 'Yazılar', href: '/tr/yazilar/' },
-      { label: 'İletişim', href: '/tr/iletisim/' },
     ];
 
 const ctaLabel = isEn ? 'Book a Meeting' : 'Toplantı Planla';
@@ -34,24 +32,26 @@ const altPath = isEn
 const altLabel = isEn ? 'TR' : 'EN';
 ---
 
-<nav class="fixed top-0 w-full z-50 glass ambient-shadow">
-  <div class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
+<nav class="fixed top-0 w-full z-50 glass-nav">
+  <div class="flex justify-between items-center w-full px-6 lg:px-12 py-4 max-w-7xl mx-auto">
     <!-- Logo -->
-    <a href={isEn ? '/en/' : '/tr/'} class="text-xl font-extrabold tracking-tighter text-primary-container font-headline">
-      CURATOR
+    <a href={isEn ? '/en/' : '/tr/'} class="flex items-center gap-2">
+      <span class="text-xl font-extrabold tracking-tight text-navy font-display">CURATOR</span>
+      <span class="hidden sm:block w-[1px] h-5 bg-border mx-1"></span>
+      <span class="hidden sm:block text-[10px] font-medium tracking-[0.15em] uppercase text-muted">Advisory</span>
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center gap-6">
+    <div class="hidden lg:flex items-center gap-8">
       {navLinks.map((link) => {
         const isActive = currentPath.startsWith(link.href);
         return (
           <a
             href={link.href}
-            class={`text-sm font-medium transition-colors ${
+            class={`text-[13px] font-medium transition-colors ${
               isActive
-                ? 'text-primary-container border-b-2 border-primary-container pb-1'
-                : 'text-on-surface-variant hover:text-primary-container'
+                ? 'text-navy'
+                : 'text-body hover:text-navy'
             }`}
           >
             {link.label}
@@ -61,19 +61,17 @@ const altLabel = isEn ? 'TR' : 'EN';
     </div>
 
     <!-- Right Actions -->
-    <div class="flex items-center gap-4">
-      <!-- Language Switcher -->
+    <div class="flex items-center gap-3">
       <a
         href={altPath}
-        class="text-xs font-bold tracking-widest text-on-surface-variant hover:text-primary-container transition-colors px-2 py-1"
+        class="text-xs font-semibold tracking-wider text-muted hover:text-navy transition-colors px-2 py-1"
       >
         {altLabel}
       </a>
 
-      <!-- CTA Button -->
       <a
         href={isEn ? '/en/contact/' : '/tr/iletisim/'}
-        class="hidden sm:inline-flex signature-gradient text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-transform active:scale-[0.98] hover:opacity-95"
+        class="hidden sm:inline-flex btn-gold px-5 py-2.5 rounded-lg text-sm"
       >
         {ctaLabel}
       </a>
@@ -84,30 +82,32 @@ const altLabel = isEn ? 'TR' : 'EN';
         class="lg:hidden flex flex-col gap-1.5 p-2"
         aria-label="Menu"
       >
-        <span class="block w-6 h-0.5 bg-primary-container transition-transform" id="bar1"></span>
-        <span class="block w-6 h-0.5 bg-primary-container transition-opacity" id="bar2"></span>
-        <span class="block w-6 h-0.5 bg-primary-container transition-transform" id="bar3"></span>
+        <span class="block w-5 h-[2px] bg-navy transition-transform" id="bar1"></span>
+        <span class="block w-5 h-[2px] bg-navy transition-opacity" id="bar2"></span>
+        <span class="block w-5 h-[2px] bg-navy transition-transform" id="bar3"></span>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant/10">
-    <div class="px-6 py-6 space-y-4 max-w-7xl mx-auto">
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border">
+    <div class="px-6 py-6 space-y-1 max-w-7xl mx-auto">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="block text-base font-medium text-on-surface-variant hover:text-primary-container transition-colors py-2"
+          class="block text-sm font-medium text-body hover:text-navy transition-colors py-3 border-b border-slate"
         >
           {link.label}
         </a>
       ))}
-      <a
-        href={isEn ? '/en/contact/' : '/tr/iletisim/'}
-        class="block signature-gradient text-white text-center px-6 py-3 rounded-lg font-semibold text-sm mt-4"
-      >
-        {ctaLabel}
-      </a>
+      <div class="pt-4">
+        <a
+          href={isEn ? '/en/contact/' : '/tr/iletisim/'}
+          class="block btn-gold text-center px-6 py-3 rounded-lg text-sm"
+        >
+          {ctaLabel}
+        </a>
+      </div>
     </div>
   </div>
 </nav>
@@ -121,7 +121,6 @@ const altLabel = isEn ? 'TR' : 'EN';
 
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      const isOpen = !menu.classList.contains('hidden');
       menu.classList.toggle('hidden');
       bar1?.classList.toggle('rotate-45');
       bar1?.classList.toggle('translate-y-2');

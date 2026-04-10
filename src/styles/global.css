@@ -1,120 +1,185 @@
 @import "tailwindcss";
 
 /*
- * CURATOR Design System Tokens
- * Source: DESIGN.md + Stitch HTML Tailwind config
+ * CURATOR Design System v2 — "Precision & Authority"
+ * Dark navy foundation + warm gold accents
  */
 
 @theme {
-  /* ── Colors: Full Material Design 3 Semantic Palette ── */
-  --color-primary: #000616;
-  --color-primary-container: #0b1f3b;
-  --color-primary-fixed: #d6e3ff;
-  --color-primary-fixed-dim: #b5c7eb;
-  --color-on-primary: #ffffff;
-  --color-on-primary-container: #3d5578;
-  --color-on-primary-fixed: #071b37;
-  --color-on-primary-fixed-variant: #364765;
-  --color-inverse-primary: #b5c7eb;
+  /* ── Core Palette ── */
+  --color-navy: #0a0f1e;
+  --color-navy-light: #111827;
+  --color-navy-card: #1a2236;
+  --color-navy-border: #232d42;
 
-  --color-secondary: #3a5069;
-  --color-secondary-container: #bdd6fd;
-  --color-secondary-fixed: #d3e3ff;
-  --color-secondary-fixed-dim: #afc8ee;
-  --color-on-secondary: #ffffff;
-  --color-on-secondary-container: #455d7e;
-  --color-on-secondary-fixed: #001c39;
-  --color-on-secondary-fixed-variant: #304868;
+  --color-gold: #b8941f;
+  --color-gold-light: #d4aa2a;
+  --color-gold-soft: #f5e6b8;
 
-  --color-tertiary: #000717;
-  --color-tertiary-container: #001f43;
-  --color-tertiary-fixed: #d6e3ff;
-  --color-tertiary-fixed-dim: #a9c7ff;
-  --color-on-tertiary: #ffffff;
-  --color-on-tertiary-container: #2a6bc4;
-  --color-on-tertiary-fixed: #001b3d;
-  --color-on-tertiary-fixed-variant: #00468b;
+  --color-slate: #f8fafc;
+  --color-slate-dark: #f1f5f9;
+  --color-white: #ffffff;
 
-  --color-error: #ba1a1a;
-  --color-error-container: #ffdad6;
-  --color-on-error: #ffffff;
-  --color-on-error-container: #93000a;
+  /* ── Semantic Text ── */
+  --color-heading: #0a0f1e;
+  --color-body: #475569;
+  --color-muted: #94a3b8;
+  --color-on-dark: #ffffff;
+  --color-on-dark-secondary: #94a3b8;
+  --color-on-dark-muted: #64748b;
 
-  --color-surface: #f8f9fb;
-  --color-surface-bright: #f8f9fb;
-  --color-surface-dim: #d8dadc;
-  --color-surface-tint: #4d5f7e;
-  --color-surface-variant: #e0e3e5;
-  --color-surface-container: #eceef0;
-  --color-surface-container-low: #f2f4f6;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-high: #e6e8ea;
-  --color-surface-container-highest: #e0e3e5;
+  /* ── Borders & Outlines ── */
+  --color-border: #e2e8f0;
+  --color-border-dark: #1e293b;
 
-  --color-on-surface: #191c1e;
-  --color-on-surface-variant: #44474d;
-  --color-inverse-surface: #2d3133;
-  --color-inverse-on-surface: #eff1f3;
-
-  --color-outline: #75777e;
-  --color-outline-variant: #c5c6ce;
-
-  --color-background: #f8f9fb;
-  --color-on-background: #191c1e;
+  /* ── Functional ── */
+  --color-error: #dc2626;
+  --color-success: #16a34a;
 
   /* ── Typography ── */
-  --font-headline: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Inter", sans-serif;
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 
   /* ── Border Radius ── */
-  --radius-sm: 0.125rem;
-  --radius-DEFAULT: 0.125rem;
-  --radius-md: 0.25rem;
-  --radius-lg: 0.375rem;
-  --radius-xl: 0.5rem;
-  --radius-2xl: 0.75rem;
-  --radius-3xl: 1rem;
+  --radius-sm: 0.375rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
 }
 
 /* ── Base Styles ── */
 body {
   font-family: var(--font-body);
-  background-color: var(--color-surface);
-  color: var(--color-on-surface);
+  background-color: var(--color-white);
+  color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-headline);
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-heading);
 }
 
-/* ── DESIGN.md Custom Utilities ── */
+/* ── Design Utilities ── */
 
-/* Signature Gradient: 135deg metallic luster from primary to primary-container */
-.signature-gradient {
-  background: linear-gradient(135deg, #000616 0%, #0b1f3b 100%);
+/* Navy gradient background */
+.bg-hero {
+  background: linear-gradient(160deg, #080d1a 0%, #0f172a 40%, #131b30 100%);
 }
 
-/* Ghost Border: outline-variant at 30% opacity - visible container suggestion */
-.ghost-border {
-  border: 1px solid rgba(197, 198, 206, 0.30);
+/* Gold gradient for buttons */
+.btn-gold {
+  background: linear-gradient(135deg, #b8941f 0%, #d4aa2a 100%);
+  color: #0a0f1e;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #d4aa2a 0%, #e8c84a 100%);
+  transform: translateY(-1px);
 }
 
-/* Ambient Shadow: blue-tinted, extra-diffused - felt not seen */
-.ambient-shadow {
-  box-shadow: 0 20px 40px rgba(7, 27, 55, 0.06);
+/* Ghost button on dark */
+.btn-ghost-light {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-ghost-light:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* Glassmorphism: for floating elements (nav, modals) */
-.glass {
-  background: rgba(248, 249, 251, 0.8);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+/* Card styles */
+.card-light {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+}
+.card-light:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
-/* Material Symbols base config */
+.card-dark {
+  background: #1a2236;
+  border: 1px solid #232d42;
+  transition: all 0.3s;
+}
+.card-dark:hover {
+  border-color: #2d3a52;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Gold accent line */
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #b8941f, #d4aa2a);
+  border-radius: 2px;
+}
+
+/* Subtle grid pattern for hero backgrounds */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow effect behind accent elements */
+.gold-glow {
+  box-shadow: 0 0 60px rgba(184, 148, 31, 0.15);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+/* Dark section divider */
+.section-divider-dark {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #232d42, transparent);
+}
+
+/* Glassmorphism nav */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+/* Stat number animation-ready */
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: linear-gradient(135deg, #b8941f, #d4aa2a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Material Symbols */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: rgba(184, 148, 31, 0.2);
+  color: #0a0f1e;
 }

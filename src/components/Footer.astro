@@ -27,93 +27,104 @@ const companyLinks = isEn
       { label: 'About', href: '/en/about/' },
       { label: 'How We Work', href: '/en/how-we-work/' },
       { label: 'Partners', href: '/en/partners/' },
+      { label: 'Sectors', href: '/en/sectors/' },
       { label: 'Contact Us', href: '/en/contact/' },
     ]
   : [
       { label: 'Hakkımızda', href: '/tr/hakkimizda/' },
       { label: 'Nasıl Çalışıyoruz', href: '/tr/nasil-calisiyoruz/' },
       { label: 'Partnerler', href: '/tr/partnerler/' },
+      { label: 'Sektörler', href: '/tr/sektorler/' },
       { label: 'İletişim', href: '/tr/iletisim/' },
     ];
 
-const newsletterTitle = isEn ? 'Newsletter' : 'Bülten';
-const newsletterText = isEn ? 'Professional insights delivered quarterly.' : 'Profesyonel içgörüler, üç ayda bir.';
-const emailPlaceholder = isEn ? 'Corporate Email' : 'Kurumsal E-posta';
 const servicesTitle = isEn ? 'Services' : 'Hizmetler';
 const companyTitle = isEn ? 'Company' : 'Şirket';
+const contactTitle = isEn ? 'Contact' : 'İletişim';
 const tagline = isEn
-  ? 'The integrated platform for industrial growth, compliance, and strategic enablement.'
-  : 'Endüstriyel büyüme, uyumluluk ve stratejik etkinleştirme için entegre platform.';
+  ? 'Strategic advisory for industrial growth, compliance readiness, and market transformation.'
+  : 'Endüstriyel büyüme, uyumluluk hazırlığı ve pazar dönüşümü için stratejik danışmanlık.';
 const copyright = isEn
-  ? '© 2025 Curator B2B Consultancy. All rights reserved.'
-  : '© 2025 Curator B2B Danışmanlık. Tüm hakları saklıdır.';
+  ? `© ${new Date().getFullYear()} Curator Advisory. All rights reserved.`
+  : `© ${new Date().getFullYear()} Curator Danışmanlık. Tüm hakları saklıdır.`;
 ---
 
-<footer class="signature-gradient text-white">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-6 md:px-12 py-20 max-w-7xl mx-auto">
-    <!-- Brand Column -->
-    <div class="space-y-6">
-      <div class="text-lg font-extrabold tracking-widest uppercase text-white font-headline">CURATOR</div>
-      <p class="text-white/60 text-sm leading-relaxed max-w-xs">
-        {tagline}
-      </p>
-    </div>
+<footer class="bg-navy text-white">
+  <!-- Main Footer -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-4 space-y-6">
+        <div class="text-xl font-extrabold tracking-tight font-display">CURATOR</div>
+        <p class="text-on-dark-secondary text-sm leading-relaxed max-w-xs">
+          {tagline}
+        </p>
+        <div class="flex gap-4 pt-2">
+          <a href="mailto:info@curator.com.tr" class="w-9 h-9 rounded-lg bg-navy-card border border-navy-border flex items-center justify-center hover:border-gold/40 transition-colors">
+            <span class="material-symbols-outlined text-on-dark-secondary text-base">mail</span>
+          </a>
+          <a href="tel:+902121234567" class="w-9 h-9 rounded-lg bg-navy-card border border-navy-border flex items-center justify-center hover:border-gold/40 transition-colors">
+            <span class="material-symbols-outlined text-on-dark-secondary text-base">call</span>
+          </a>
+        </div>
+      </div>
 
-    <!-- Services Column -->
-    <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{servicesTitle}</h5>
-      <ul class="space-y-3">
-        {serviceLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="text-white/60 text-sm hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <!-- Services -->
+      <div class="lg:col-span-3 space-y-5">
+        <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-on-dark-muted">{servicesTitle}</h5>
+        <ul class="space-y-3">
+          {serviceLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-on-dark-secondary text-sm hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-    <!-- Company Column -->
-    <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{companyTitle}</h5>
-      <ul class="space-y-3">
-        {companyLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="text-white/60 text-sm hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <!-- Company -->
+      <div class="lg:col-span-2 space-y-5">
+        <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-on-dark-muted">{companyTitle}</h5>
+        <ul class="space-y-3">
+          {companyLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-on-dark-secondary text-sm hover:text-white transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-    <!-- Newsletter Column -->
-    <div class="space-y-4">
-      <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-white">{newsletterTitle}</h5>
-      <p class="text-white/60 text-sm">{newsletterText}</p>
-      <div class="flex border border-white/20 rounded-lg overflow-hidden">
-        <input
-          type="email"
-          placeholder={emailPlaceholder}
-          class="bg-transparent text-sm w-full px-4 py-2.5 border-none focus:outline-none focus:ring-0 text-white placeholder-white/40"
-        />
-        <button class="bg-white text-primary-container px-4 py-2.5 text-xs font-bold uppercase tracking-widest shrink-0 hover:bg-white/90 transition-opacity">
-          <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </button>
+      <!-- Contact Info -->
+      <div class="lg:col-span-3 space-y-5">
+        <h5 class="text-xs font-bold uppercase tracking-[0.15em] text-on-dark-muted">{contactTitle}</h5>
+        <div class="space-y-4 text-sm text-on-dark-secondary">
+          <div>
+            <p class="text-white font-medium mb-1">İstanbul</p>
+            <p>Levent, İstanbul</p>
+          </div>
+          <div>
+            <p class="text-white font-medium mb-1">Ankara</p>
+            <p>Söğütözü, Ankara</p>
+          </div>
+          <div class="pt-1">
+            <a href="mailto:info@curator.com.tr" class="hover:text-white transition-colors">info@curator.com.tr</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Bottom Bar -->
-  <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 border-t border-white/10">
-    <p class="text-white/40 text-xs text-center leading-relaxed">
-      {copyright}
-    </p>
+  <div class="border-t border-navy-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-on-dark-muted text-xs">{copyright}</p>
+      <div class="flex items-center gap-1 text-on-dark-muted text-xs">
+        <span class="w-2 h-2 rounded-full bg-gold/60"></span>
+        <span>Istanbul & Ankara</span>
+      </div>
+    </div>
   </div>
 </footer>

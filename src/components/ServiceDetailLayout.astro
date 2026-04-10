@@ -12,48 +12,56 @@ interface Props {
   ctaHref: string;
 }
 
-const { locale, icon, title, subtitle, description, image, features, outcomes, ctaLabel, ctaHref } = Astro.props;
+const { locale, icon, title, subtitle, description, features, outcomes, ctaLabel, ctaHref } = Astro.props;
 const isEn = locale === 'en';
 const outcomesTitle = isEn ? 'Expected Outcomes' : 'Beklenen Sonuçlar';
 const featuresTitle = isEn ? 'What We Cover' : 'Kapsam';
 ---
 
-<main class="pt-20">
+<main>
   <!-- Hero -->
-  <section class="px-6 md:px-8 py-16 md:py-24 bg-surface">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7">
-        <span class="text-xs font-bold tracking-[0.2em] text-on-primary-container uppercase block mb-4">{subtitle}</span>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-primary-container mb-6 leading-[1.1] font-headline">
-          {title}
-        </h1>
-        <p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
-          {description}
-        </p>
-      </div>
-      <div class="lg:col-span-5">
-        {image ? (
-          <img src={image} alt={title} class="w-full rounded-xl" loading="eager" />
-        ) : (
-          <div class="w-full aspect-[4/3] bg-surface-container-low rounded-xl flex items-center justify-center">
-            <div class="w-24 h-24 signature-gradient rounded-2xl flex items-center justify-center ambient-shadow">
-              <span class="material-symbols-outlined text-white text-4xl">{icon}</span>
-            </div>
+  <section class="bg-hero relative overflow-hidden">
+    <div class="hero-grid absolute inset-0"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 md:pt-40 md:pb-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="accent-line"></div>
+            <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">{subtitle}</span>
           </div>
-        )}
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight font-display mb-6">
+            {title}
+          </h1>
+          <p class="text-on-dark-secondary text-lg leading-relaxed max-w-2xl">
+            {description}
+          </p>
+        </div>
+        <div class="lg:col-span-4 hidden lg:flex justify-end">
+          <div class="w-32 h-32 rounded-2xl bg-navy-card border border-navy-border flex items-center justify-center gold-glow">
+            <span class="material-symbols-outlined text-gold text-5xl">{icon}</span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="absolute top-20 right-[10%] w-72 h-72 bg-gold/5 rounded-full blur-[100px]"></div>
   </section>
 
   <!-- Features -->
-  <section class="py-16 md:py-20 px-6 md:px-8 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-primary-container mb-12 font-headline">{featuresTitle}</h2>
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="accent-line"></div>
+        <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">{featuresTitle}</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-heading tracking-tight font-display mb-16">
+        {featuresTitle}
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((feature) => (
-          <div class="bg-surface-container-lowest p-8 rounded-xl ghost-border">
-            <h4 class="text-lg font-bold text-primary-container mb-3 font-headline">{feature.title}</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{feature.description}</p>
+        {features.map((feature, i) => (
+          <div class="card-light rounded-xl p-8">
+            <div class="stat-number text-xs font-bold tracking-widest mb-4">{`0${i + 1}`}</div>
+            <h4 class="text-lg font-bold text-heading mb-3 font-display">{feature.title}</h4>
+            <p class="text-body text-sm leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>
@@ -61,30 +69,43 @@ const featuresTitle = isEn ? 'What We Cover' : 'Kapsam';
   </section>
 
   <!-- Outcomes -->
-  <section class="py-16 md:py-20 px-6 md:px-8 bg-surface">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <section class="py-24 md:py-32 bg-slate">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <h2 class="text-3xl font-extrabold text-primary-container mb-8 font-headline">{outcomesTitle}</h2>
-        <ul class="space-y-4">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="accent-line"></div>
+          <span class="text-gold text-xs font-semibold tracking-[0.2em] uppercase">{outcomesTitle}</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-heading tracking-tight font-display mb-10">
+          {outcomesTitle}
+        </h2>
+        <ul class="space-y-5">
           {outcomes.map((outcome) => (
             <li class="flex items-start gap-4">
-              <span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
-              <span class="text-on-surface-variant leading-relaxed">{outcome}</span>
+              <div class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-gold" style="font-size: 14px;">check</span>
+              </div>
+              <span class="text-body leading-relaxed">{outcome}</span>
             </li>
           ))}
         </ul>
       </div>
-      <div class="flex justify-center">
-        <a
-          href={ctaHref}
-          class="signature-gradient text-white px-12 py-5 rounded-lg font-bold text-lg ambient-shadow hover:opacity-95 transition-all active:scale-[0.98] inline-block"
-        >
-          {ctaLabel}
-        </a>
+      <div class="flex lg:justify-end">
+        <div class="card-light rounded-2xl p-10 max-w-md w-full text-center">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-navy flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-gold text-2xl">{icon}</span>
+          </div>
+          <h3 class="text-xl font-bold text-heading mb-3 font-display">{ctaLabel}</h3>
+          <p class="text-body text-sm mb-6">
+            {isEn ? "Let's discuss how this service fits your needs." : 'Bu hizmetin ihtiyaçlarınıza nasıl uyduğunu konuşalım.'}
+          </p>
+          <a href={ctaHref} class="btn-gold px-8 py-3 rounded-lg text-sm inline-block">
+            {ctaLabel}
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Additional content slot -->
   <slot />
 </main>

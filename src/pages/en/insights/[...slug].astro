@@ -16,44 +16,47 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={`${post.data.title} | CURATOR`} description={post.data.description} locale="en">
-  <main class="pt-20">
-    <article class="px-6 md:px-8 py-24 bg-surface">
-      <div class="max-w-3xl mx-auto">
-        <div class="mb-8">
-          <a href="/en/insights/" class="text-xs font-bold uppercase tracking-widest text-on-primary-container hover:text-primary-container transition-colors flex items-center gap-1 mb-6">
-            <span class="material-symbols-outlined text-sm">arrow_back</span>
-            All Insights
-          </a>
-          <div class="flex gap-2 mb-4">
-            {post.data.tags.map((tag) => (
-              <span class="text-[10px] font-bold uppercase tracking-widest text-on-primary-container bg-surface-container-low px-2 py-1 rounded">{tag}</span>
-            ))}
-          </div>
-          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-primary-container mb-6 leading-[1.15] font-headline">
-            {post.data.title}
-          </h1>
-          <div class="flex items-center gap-4 text-sm text-on-surface-variant">
-            <span>{post.data.author}</span>
-            <span class="w-1 h-1 bg-outline-variant rounded-full"></span>
-            <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          </div>
+  <main>
+    <section class="bg-hero relative overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 pt-32 pb-16 md:pt-40 md:pb-20 relative z-10">
+        <a href="/en/insights/" class="text-xs font-bold uppercase tracking-widest text-gold hover:text-gold-light transition-colors inline-flex items-center gap-1 mb-8">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          All Insights
+        </a>
+        <div class="flex gap-2 mb-6">
+          {post.data.tags.map((tag) => (
+            <span class="text-[10px] font-bold uppercase tracking-widest text-gold bg-gold/10 border border-gold/20 px-2 py-1 rounded">{tag}</span>
+          ))}
         </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15] font-display mb-6">
+          {post.data.title}
+        </h1>
+        <div class="flex items-center gap-3 text-sm text-on-dark-secondary">
+          <span>{post.data.author}</span>
+          <span class="w-1 h-1 bg-on-dark-muted rounded-full"></span>
+          <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+      </div>
+    </section>
 
+    <article class="py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12">
         <div class="prose prose-lg max-w-none
-          prose-headings:font-headline prose-headings:text-primary-container prose-headings:tracking-tight
-          prose-p:text-on-surface-variant prose-p:leading-relaxed
-          prose-a:text-on-tertiary-container prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-primary-container
-          prose-li:text-on-surface-variant
+          prose-headings:font-display prose-headings:text-heading prose-headings:tracking-tight
+          prose-p:text-body prose-p:leading-relaxed
+          prose-a:text-gold prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-heading
+          prose-li:text-body
           prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
           prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
         ">
           <Content />
         </div>
 
-        <div class="mt-16 p-8 bg-surface-container-low rounded-xl text-center">
-          <p class="text-primary-container font-bold mb-4 font-headline">Want support on this topic?</p>
-          <a href="/en/contact/" class="inline-block signature-gradient text-white px-8 py-3 rounded-lg font-semibold text-sm hover:opacity-95 transition-all">
+        <div class="mt-16 card-light rounded-2xl p-10 text-center">
+          <p class="text-heading font-bold mb-6 font-display text-lg">Want support on this topic?</p>
+          <a href="/en/contact/" class="btn-gold px-8 py-3 rounded-lg text-sm inline-block">
             Book a Meeting
           </a>
         </div>
